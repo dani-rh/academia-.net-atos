@@ -1,0 +1,43 @@
+# Visual Studio files
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vs/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+obj/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Resharper cache/temporary files
+_ReSharper*/
+*.resharper
+*.DotSettings.user
+
+# Others
+[Tt]humbs.db
+*.DS_Store
+*.bak
+*.vspscc
+*.vssscc
+*.cache
+*.ilk
+*.meta
+*.log
+*.pdb
+*.psess
+*.vsp
+*.bak
+*.CodeMaid.cache
