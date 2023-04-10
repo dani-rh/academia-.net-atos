@@ -13,12 +13,12 @@
 
             //Console.WriteLine("Seu nome é: " + nome); //Com concatenação
 
-            string s; //texto, todo e qualquer texto
+            //string s; //texto, todo e qualquer texto
             //char c; //caractere
-            int x; //números inteiros
-            float y;//números reais
-            double d;//números reais
-            bool bo;//bolleano, lógico, 0 ou 1, true or false
+            //int x; //números inteiros
+            //float y;//números reais
+            //double d;//números reais
+            //bool bo;//bolleano, lógico, 0 ou 1, true or false
 
             //inteiros
             //int idade = 32;
@@ -63,10 +63,10 @@
             //Console.WriteLine("A média aritmética é: " + media);
 
 
-            Console.WriteLine("Digite uma temperatura em Celsius: ");
-            double celsius = double.Parse(Console.ReadLine());
-            double fahrenheit = (1.8 * celsius) + 32;
-            Console.WriteLine("A temperatura em Fahrenheit é: " + fahrenheit);
+            //Console.WriteLine("Digite uma temperatura em Celsius: ");
+            //double celsius = double.Parse(Console.ReadLine());
+            //double fahrenheit = (1.8 * celsius) + 32;
+            //Console.WriteLine("A temperatura em Fahrenheit é: " + fahrenheit);
 
             //Console.WriteLine("Digite um valor para A: ");
             //int a = int.Parse(Console.ReadLine());
