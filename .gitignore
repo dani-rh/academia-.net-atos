@@ -12,6 +12,7 @@
 x64/
 build/
 obj/
+*.csproj
 
 # NuGet packages
 *.nupkg
