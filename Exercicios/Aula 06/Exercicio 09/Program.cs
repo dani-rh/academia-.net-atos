@@ -20,7 +20,7 @@ namespace Exercicio_09
             int numPessoasSemFilhos = 0;
 
             //perguntar o número de filhos para 30 pessoas
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 30; i++)
             {
                 Console.WriteLine("Digite a quantidade de filhos da pessoa " +(i+1)+ ": ");
                 int quantidadeFilhos = int.Parse(Console.ReadLine());
