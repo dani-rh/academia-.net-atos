@@ -4,6 +4,9 @@
     {
         static void Main(string[] args)
         {
+
+            //Vetores - arrays
+
             int[] vetor = new int[3];
 
             for (int i = 0; i < vetor.Length; i++)
