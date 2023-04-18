@@ -72,7 +72,6 @@
             double media = (double)soma / elementos;
 
             Console.WriteLine("\nA média dos elementos da duas matrizes é: " +media);
-
         }
     }
 }
