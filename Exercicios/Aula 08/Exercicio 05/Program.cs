@@ -34,7 +34,7 @@ namespace Exercicio_05
                 for (int j = 0; j < 3; j++)
                 {
                     matriz2[i, j] = random.NextDouble();
-                    Console.Write(matriz1[i, j] + "\t");
+                    Console.Write(matriz2[i, j] + "\t");
                 }
                 Console.WriteLine();
             }
