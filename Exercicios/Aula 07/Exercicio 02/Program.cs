@@ -13,7 +13,7 @@
 
             for (int i = 0; i < valores1.Length; i++)
             {
-                Console.Write("Informe um valor para a posição " + (i+1) + ": ");
+                Console.Write("Informe um valor para a posição " + (i + 1) + ": ");
                 valores1[i] = int.Parse(Console.ReadLine());
             }
             for (int i = 0; i < valores2.Length; i++)
@@ -27,7 +27,6 @@
                 soma[i] = valores1[i] + valores2[i];
                 Console.WriteLine("A soma da posição " +(i+1)+ " é igual à " + soma[i]);
             }
-
         }
     }
 }
