@@ -1,0 +1,62 @@
+<!-- Exercício 01 - Aula 24/04
+    Sobre a página inicial que o professor Fabrício pediu na semana passada, criar uma outra página com um  um formulário com  os seguintes campos:
+    Nome (campo de texto obrigatório)
+    E-mail (campo de texto obrigatório)
+    Senha (campo de senha obrigatório)
+    Sexo (campo de seleção obrigatório com opções "Masculino", "Feminino" e "Outro")
+    Data de nascimento (campo de data obrigatório)
+    Interesses (checkboxes com as opções "Esportes", "Música", "Cinema", "Viagem" e "Tecnologia")
+    Além disso, deve possuir um textarea para inserir uma mensagem.
+    Deverá possuir um botão de enviar e limpar.
+    Faça a navegação de volta a página principal.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Formulário</title>
+</head>
+<body bgcolor="purple" text="white">
+<form action="processa.php" method="post">
+    <h1>Dados de contato do usuário:</h1>
+    
+    <label for = "nomeCompleto">Nome completo: </label>
+    <input type="text" name="nomeCompleto" id="Nome" required> 
+    <br>
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="senha">Senha: </label>
+    <input type="password" id="senha" name="senha" required>
+    <br>
+    <label for = "sexo">Sexo:</label>
+    <input type = "radio" name="sexo" value="masculino">Masculino 
+    <input type = "radio" name="sexo" value="feminino">Feminino
+    <br>
+
+    <label for="data">Data de Nascimento: </label>
+    <input type="date" name = "data" id = "data" required><br>
+    
+    <br>
+    <label>Interesses: </label>
+    <input type="checkbox" name="op1" value="op1"> Esportes 
+    <input type="checkbox" name="op2" value="op2"> Música
+    <input type="checkbox" name="op3" value="op3"> Cinema
+    <input type="checkbox" name="op4" value="op4"> Viagem
+    <input type="checkbox" name="op5" value="op5"> Tecnologia
+    
+    <br>
+    <label for="mensagem">Mensagem: </label>
+    <textarea id="mensagem" name="mensagem" rows="5" cols="20"></textarea>
+    <br>
+    
+    <br>
+    <button type = "submit">Enviar</button>
+    <button type="reset">Limpar</button>
+    
+</form>
+<br>
+<br>
+<li><a href="C:\Users\usuario\Documents\GitHub\academia-.net-atos\HTML\Aula 20.04\Exercícios\Exercicio 01.html">Voltar à página principal</a></li>
+</body>
+</html>
