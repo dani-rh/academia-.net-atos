@@ -1,0 +1,41 @@
+body {
+    background-color:rgb(197, 148, 178);
+    background-image: url("imagem.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right top;
+}
+#conteiner{
+    background-color: burlywood;
+    text-transform: uppercase;
+}
+#h1principal{
+    background-color: aquamarine;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-variant: normal;
+}
+.classe1{
+    color: blue;
+    text-decoration: underline;
+    text-indent: 30px;
+    font-size: 120%; /*1.2em */
+    text-align: justify;
+    font-variant: small-caps;
+
+}
+#teste{
+    color:red;
+    text-decoration: line-through;
+}
+a{
+    color:blueviolet
+}
+a:link{
+    color:aqua
+}
+a:visited{
+    color: brown;
+}
