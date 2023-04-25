@@ -4,6 +4,10 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right top;
+    margin-top: 100px;
+    margin-right: 40px;
+    margin-left: 70px;
+    margin-bottom: 10px;
 }
 #conteiner{
     background-color: burlywood;
@@ -26,13 +30,47 @@ body {
     font-variant: small-caps;
 
 }
+
+#divnova1{
+    float:none;
+    width: 400px;
+    height: 500px;
+    border: 1px solid black;
+    background: orange;
+}
+
+#div1{
+    float: left;
+    clear: right;
+    width: 33%;
+    border: 1px solid black;
+    background: green;
+}
+
+#div2{
+    float: left;
+    clear:left;
+    width: 33%;
+    border: 1px solid black;
+    background: fuchsia;
+}
+
+#div3{
+    float: left;
+    width: 33%;
+    border: 1px solid black;
+    background: rgb(196, 144, 47);
+}
+
 #teste{
     color:red;
     text-decoration: line-through;
 }
+
 a{
     color:blueviolet
 }
+
 a:link{
     color:aqua
 }
