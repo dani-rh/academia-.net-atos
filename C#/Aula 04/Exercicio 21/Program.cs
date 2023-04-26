@@ -24,7 +24,7 @@ namespace Exercicio_21
             opSaida = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Digite um valor para conversão: ");
-            valorEntrada = double.Parse(Console.Readline());
+            valorEntrada = double.Parse(Console.ReadLine());
 
 
 

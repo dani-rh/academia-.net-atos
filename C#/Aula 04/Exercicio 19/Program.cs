@@ -1,10 +1,14 @@
-﻿namespace Exercicio_19
+﻿using System.Runtime.Intrinsics.Arm;
+
+namespace Exercicio_19
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             {
+                //Exercício 19 - Ajuste o exercício 18 de maneira que mostre os valores informados em ordem crescente.
+
                 int n1, n2, n3;
                 Console.WriteLine("Digite o N1: ");
                 n1 = int.Parse(Console.ReadLine());

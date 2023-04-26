@@ -1,36 +1,29 @@
-﻿namespace Exercicio_01
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace Exercicio_01
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //Exercicios lista aula 03 
 
+            //Exercício 01 - Faça um algoritmo para calcular e mostrar a área de um triângulo a partir dos valores da base e da altura lidos pelo teclado: 
+            //Área do triangulo = (base * altura) / 2;
+            //Teste se a base ou a altura digitada não foi igual a zero.
 
-            //Exemplo 01:
-            //Considere que será concedido um bonus aos trabalhadores de uma empresa, conforme o salário atual do vendedor, descrito abaixo. Desenvolva o algoritmo para ler
-            //o salário e calcular o valor em reais do aumento. Exibir na tela, o salário atual, o aumento (% e R$) e o novo salário.
+            Console.WriteLine("Digite o valor da base do triângulo: ");
+            double baseTriangulo = double.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o valor da altura do triângulo: ");
+            double alturaTriangulo = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Digite o salário do funcionário: ");
-            double salarioatual = int.Parse(Console.ReadLine());
-
-            if (salarioatual <= 900)
+            if (baseTriangulo != 0 && alturaTriangulo != 0)
             {
-                double aumento1 = (salarioatual * 0.05);
-                double novosalario1 = (aumento1 + salarioatual);
-                Console.WriteLine("O Salário atual é de R$ " + salarioatual + "O aumento salário é de 5% e o valor do aumento é de R$ " + aumento1 + ". O novo salário será de: R$ " + novosalario1);
+                double areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+                Console.WriteLine("A área do triângulo é: " + areaTriangulo);
             }
-            if (salarioatual > 900 && salarioatual < 1400)
+            else
             {
-                double aumento2 = (salarioatual * 0.08);
-                double novosalario2 = (aumento2 + salarioatual);
-                Console.WriteLine("O Salário atual é de R$ " + salarioatual + "O aumento salário é de 8% e o valor do aumento é de R$ " + aumento2 + ". O novo salário será de: R$ " + novosalario2);
-            }
-            if (salarioatual >= 1400)
-            {
-                double aumento3 = (salarioatual * 0.10);
-                double novosalario3 = (aumento3 + salarioatual);
-                Console.WriteLine("O Salário atual é de R$ " + salarioatual + "O aumento salário é de 10% e o valor do aumento é de R$ " + aumento3 + ". O novo salário será de: R$ " + novosalario3);
+                Console.WriteLine("A base ou a altura não pode ser igual a zero!");
             }
         }
     }

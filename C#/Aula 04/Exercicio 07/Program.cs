@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            //Faça um programa em C# e no VS para receber uma frase qualquer e uma palavra de pesquisa.
+            //Exercicio 07 - Faça um programa em C# e no VS para receber uma frase qualquer e uma palavra de pesquisa.
             //O programa deve avaliar se a palavra aparece na frase, informando o usuário via mensagem.
 
             string palavra, frase;
