@@ -7,7 +7,7 @@ namespace Exercicio_10
     {
         static void Main(string[] args)
         {
-            //10. Ler nome, sexo e idade de 50 pessoas e após imprimir:
+            //Exercício 10 - Ler nome, sexo e idade de 50 pessoas e após imprimir:
             //Número de pessoas do sexo masculino.
             //Número de pessoas do sexo feminino.
             //Número de pessoas com idade inferior a 30 anos.

@@ -8,7 +8,6 @@
             //Exercício 05 - Modifique o programa em VS anterior para aceitar votos nulos (qualquer nome diferente de FIM, JOAO, ZECA e BRANCO).
             //Ao final, informe o nome do candidato vencedor, o número de votos nulos e o número de pessoas que votaram.
 
-
             int votosJoao = 0;
             int votosZeca = 0;
             int votosBranco = 0;
@@ -53,7 +52,6 @@
             Console.WriteLine("Foram recebidos " + votosNulos+ " votos nulos.");
             int totalVotos = votosBranco + votosNulos + votosJoao + votosZeca;
             Console.WriteLine("Ao final, " +totalVotos+ " pessoas votaram.");
-
 
         }
     }

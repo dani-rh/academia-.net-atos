@@ -7,7 +7,7 @@ namespace Exercicio_12
     {
         static void Main(string[] args)
         {
-            //12.Apresentar o total da soma dos cem primeiros números inteiros.
+            //Exercício 12 - Apresentar o total da soma dos cem primeiros números inteiros.
 
             int soma = 0;
 

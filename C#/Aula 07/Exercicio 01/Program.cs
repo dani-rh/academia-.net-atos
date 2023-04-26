@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            //1.Escreva um algoritmo que leia os valores para um vetor de 10 elementos
+            //Exercício 01 - Escreva um algoritmo que leia os valores para um vetor de 10 elementos
             //e então mostre na tela a quantidade de números pares e ímpares.
 
             int[] numeros = new int[10];

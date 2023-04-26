@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            //Funções 
 
             static double subtrai(double num1, double num2)
             {

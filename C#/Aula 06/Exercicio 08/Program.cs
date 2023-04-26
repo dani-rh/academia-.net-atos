@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            //8. Faça um programa em VS que solicite um numero inteiro. Se o numero não for inteiro, solicite-o até que seja. Após, informe se ele é par ou impar.
+            //Exercício 08 - Faça um programa em VS que solicite um numero inteiro. Se o numero não for inteiro, solicite-o até que seja. Após, informe se ele é par ou impar.
             //Finalmente, pergunte ao usuário se ele quer repetir o programa em VS.
             
             bool repetir = true;

@@ -6,7 +6,7 @@ namespace Exercicio_13
     {
         static void Main(string[] args)
         {
-            //13.Elaborar um programa que apresente o somatório dos valores pares existentes entre 1 e 500.
+            //Exercício 13 - Elaborar um programa que apresente o somatório dos valores pares existentes entre 1 e 500.
 
             int soma = 0;
             

@@ -6,7 +6,7 @@ namespace Exercicio_02
     {
         static void Main(string[] args)
         {
-            //2.Modificar o programa em VS anterior para que ao final ele pergunte ao usuário se ele deseja
+            //Exercício 02 - Modificar o programa em VS anterior para que ao final ele pergunte ao usuário se ele deseja
             //informar um outro número. Caso positivo, o programa em VS deve ser repetido.
            
             bool repetir = true;
@@ -40,8 +40,6 @@ namespace Exercicio_02
                     repetir = false;
                 }
             }
-
-
         }
     }
 }
