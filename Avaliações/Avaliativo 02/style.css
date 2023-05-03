@@ -8,24 +8,19 @@
 body {
     background-color:white;
     background-image: url("imagem.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: right top;
-    margin-top: 100px;
+    margin-top: 30px;
     margin-right: 40px;
-    margin-left: 70px;
-    margin-bottom: 10px;
+    margin-left: 40px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: burlywood;
 }
 
-header{
-  background-color:  rgba(155, 155, 235, 0.623);
-  color:white;
-} 
-
+footer {
+  display: flex;
+  justify-content: center;
+}
 
 .logo a {
   color: white;
@@ -50,17 +45,11 @@ p {
 margin-bottom: 20px;
 }
 
-a {
-  color: #333;
-}
-a:hover {
-  text-decoration: underline;
-}
 
 /*Barra de navegação*/
 nav {
-  background-color: rgba(155, 155, 235, 0.623);
-  height: 200px;
+  background-color: rgba(122, 122, 187, 0.524);
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,14 +60,14 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center; /* Adiciona essa propriedade para centralizar o conteúdo */
+  justify-content: center; 
   text-align: center;
   padding: 10px 0;
 }
 
 .nav-links li {
   margin-right: 30px;
-  width: 100px;
+  width: 300px;
   text-align: center;
 }
 
@@ -96,14 +85,14 @@ nav {
 }
 
 .nav-links li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-size: 18px;
   margin-left: 20px;
 }
 
 .nav-links li a:hover {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid white;
 }
 
 /* Hero Section */
@@ -135,6 +124,7 @@ nav {
   max-width: 800px;
   color: white;
   background-color: burlywood;
+  align-items: center;
 }
 
 table {
@@ -148,7 +138,7 @@ th, td {
 }
 
 th {
-background-color: black;
+background-color: grey;
 }
 
 /*Imagem*/
@@ -159,14 +149,8 @@ img {
 
 /* Sobre Section */
 #sobre {
-  background-color: #f5f5f5;
   padding: 50px 0;
   text-align: center;
-}
-
-#sobre h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
 }
 
 #sobre p {
@@ -175,13 +159,14 @@ img {
   margin-bottom: 20px;
 }
 
+/*Imagens da página sobre*/
 .imagem-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(185, 184, 184);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -206,8 +191,8 @@ img {
 }
 
 .imagem-card button {
-  background-color: #333;
-  color: #fff;
+  background-color: rgb(74, 73, 73);
+  color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -216,19 +201,13 @@ img {
 }
 
 .imagem-card button:hover {
-  background-color: #555;
+  background-color: grey;
 }
 
-/* Contato Section */
+/* Página Contato */
 #contato {
-  background-color: #fff;
   padding: 50px 0;
   text-align: center;
-}
-
-#contato h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
 }
 
 form {
@@ -252,7 +231,48 @@ textarea {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(175, 175, 175);
 }
 
-button[type="submit"]
+/*Página Galeria*/
+#galeria {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.grid-item {
+  position: relative;
+}
+
+.grid-item-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+.grid-item:hover .grid-item-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
