@@ -1,0 +1,27 @@
+<!--Exercicio 04 - Crie um parágrafo (<p>) com um texto como conteúdo. Adicione um botão que, ao ser clicado, oculte ou mostre o texto do parágrafo. -->
+
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Exercício 04</title>
+            <script>
+                function mostrarOcultar ()
+                {
+                    var paragrafo = document.getElementById("texto");
+                    if (paragrafo.style.display === "none")
+                    {
+                        paragrafo.style.display = "block";
+                    }
+                    else
+                    {
+                        paragrafo.style.display = "none";
+                    }
+                }
+            </script>
+        </head>
+
+        <body>
+           <p id="texto">Esté é o parágrafo.</p>
+           <button onclick="mostrarOcultar()">Mostrar/Ocultar</button>
+        </body>
+    </html> 
