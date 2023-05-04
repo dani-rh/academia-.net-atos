@@ -1,0 +1,32 @@
+<!--Exercício 02 - Crie uma página com 4 links (tag <a>), cada um representando o nome de uma cor, 
+    que, utilizando o evento onmouseover altere a cor do plano de fundo para cor correspondente.-->
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Exercício 02</title>
+            <style>
+                body {
+                    transition: background-color 0.5s ease;
+                }
+
+                a{
+                    margin-left: 30px;
+                    margin-right: 30px;
+                }
+            </style>
+        </head>
+        <body>
+            <a hreaf="#" onmouseover="mudarCor('red')">Vermelho</a>
+            <a hreaf="#" onmouseover="mudarCor('green')">Verde</a>
+            <a hreaf="#" onmouseover="mudarCor('blue')">Azul</a>
+            <a hreaf="#" onmouseover="mudarCor('yellow')">Amarelo</a>
+        
+          <script>
+            function mudarCor(cor) 
+            {
+                document.body.style.backgroundColor = cor;
+            }
+          </script>
+        </body>
+    </html>
