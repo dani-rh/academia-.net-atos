@@ -1,0 +1,28 @@
+<!--Exercício 03 - Crie uma página com uma lista (select - RadioButton) com 4 opções de cores. 
+    Ao selecionar uma opção de cor, altere o plano de fundo da página para a cor específica. -->
+
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Exercício 03</title>
+        </head>
+        <body>
+            <label for="cores">Selecione uma cor:</label>
+            <select name="cores" id="cores" onchange="mudarCor()">
+                <option value="red">Vermelho</option>
+                <option value="green">Verde</option>
+                <option value="blue">Azul</option>
+                <option value="yellow">Amarelo</option>
+
+            </select>
+        
+          <script>
+            function mudarCor(cor) 
+            {
+                var select = document.getElementById("cores");
+                var cor = select.options[select.selectedIndex].value;
+                document.body.style.backgroundColor = cor;
+            }
+          </script>
+        </body>
+    </html>
