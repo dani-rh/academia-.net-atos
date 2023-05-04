@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<!--Exercício 03 - Construa uma página com dois inputs do tipo Text e um botão.
+Ao clicar no botão, mostre o resultado da soma dos valores atribuídos aos inputs.-->
+<head>
+    <title>Exercício 03</title>
+</head>
+<body>
+  <label for="valor1">Valor 01:</label>
+  <input type="text" id="valor1"><br>
+
+  <label for="valor2">Valor 02:</label>
+  <input type="text" id="valor2"><br>
+
+  <button onclick="calcularSoma()">Mostrar soma dos valores</button>
+
+  <script>
+    function calcularSoma() 
+    {
+      var valor1 = parseInt(document.getElementById("valor1").value);
+      var valor2 = parseInt(document.getElementById("valor2").value);
+      
+      var soma = valor1 + valor2;
+
+      alert("A soma dos valores é " +soma);
+    }
+
+  </script>
+</body>
+
+</html>
