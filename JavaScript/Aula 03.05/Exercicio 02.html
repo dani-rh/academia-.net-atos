@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<!--Exercício 02 - Construa uma página com dois inputs do tipo Text (um para nome e outro para idade) e um botão.
+Ao clicar no botão, mostre uma mensagem como esta: "Juarez é maior de idade"-->
+
+<head>
+    <title>Exercício 02</title>
+  </head>
+  <body>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome"><br>
+
+    <label for="idade">Idade:</label>
+    <input type="text" id="idade"><br>
+
+    <button onclick="exibirMensagem()">Mostrar mensagem</button>
+
+    <script>
+      function exibirMensagem() 
+      {
+        var nome = document.getElementById("nome").value;
+        var idade = parseInt(document.getElementById("idade").value);
+        
+        var mensagem = "";
+
+        if (idade >= 18)
+        {
+            mensagem = nome + " é maior de idade.";
+        }
+        else
+        {
+            mensagem = nome + " não é maior de idade."
+        }
+
+        alert(mensagem);
+      }
+
+    </script>
+  </body>
+
+</html>
