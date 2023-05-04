@@ -1,0 +1,24 @@
+<!--Exercício 01 - Crie um formulário com 4 botões que, ao clicar em cada um, 
+    altere a cor do plano de fundo da página para vermelho, verde, azul e amarelo, respectivamente.-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 01</title>
+    </head>
+    <body>
+    <form>
+      <input type="button" value="Vermelho" onclick="mudarCor('red')">
+      <input type="button" value="Verde" onclick="mudarCor('green')">
+      <input type="button" value="Azul" onclick="mudarCor('blue')">
+      <input type="button" value="Amarelo" onclick="mudarCor('yellow')">
+    </form>
+    
+      <script>
+        function mudarCor(cor) 
+        {
+            document.body.style.backgroundColor = cor;
+        }
+      </script>
+    </body>
+</html>
