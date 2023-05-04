@@ -1,0 +1,45 @@
+<!--Exercício 05 - Crie um formulário de seleção de itens com checkbox. 
+    O formulário deve possuir um botão desabilitado. 
+    O botão só se torna clicável quando tiver pelo menos 2 checkboxs marcado.-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 05</title>
+        <script>
+            function validarCheckbox()
+            {
+                var checkboxs = document.getElementsByName("item");
+                var countCheck = 0;
+
+                for (var i = 0; i < checkboxs.length; i++)
+                {
+                    if (checkboxs[i].checked)
+                    {
+                        countCheck++;
+                    }
+                }
+            
+                if (countCheck >= 2)
+                {
+                    document.getElementById('buttonSubmit').disabled = false;
+                }
+                else
+                {
+                    document.getElementById('buttonSubmit').disabled = true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+    <form>
+        <label><input type="checkbox" name="item" onclick="validarCheckbox()">Item 1</label><br>
+        <label><input type="checkbox" name="item" onclick="validarCheckbox()">Item 2</label><br>
+        <label><input type="checkbox" name="item" onclick="validarCheckbox()">Item 3</label><br>
+        <label><input type="checkbox" name="item" onclick="validarCheckbox()">Item 4</label><br>
+        <br>
+        <button type="submit" id="buttonSubmit" disabled>Enviar</button>
+    </form>
+    
+    </body>
+</html>
