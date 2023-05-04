@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <script>
+            //alert('Página carregando');
+
+            // var variavel = "valor";
+            // var texto = 'valor';
+            // var n1 = 50;//Number
+            // var n2 = 5.9;//Number
+            // var booleano = true;
+
+            // var u = undefined;
+            // var n = null;
+
+            // var obj = 
+            // {
+            //     id:1,
+            //     nome:'Fabrício'
+            // };
+
+            // var arrays = ["Fabrício", "Tonetto", "Londero"];
+
+            // var func = function (x,y)
+            // {
+            //     return x + y;
+            // };
+
+            // var retorno = func(5,4);
+            // alert(retorno);
+
+            // var valor = 2;
+
+            // if(valor == "2") // analisa os valores das variáveis
+            // {
+            //     alert("deu verdadeiro :o");
+            // }
+
+            // //Igualdade restrita
+            // if(valor === "2") //analisa os valores e tipos das variáveis
+            // {
+            //     alert("deu verdadeiro 2 :o")
+            // }
+            // else
+            // {
+            //     alert("deu falso");
+            // }
+
+            // var retorno = (valor === "2")?"verdadeiro":"falso";
+            // alert(retorno);
+
+            // var alunos = ["Lucas", "Leandro", "Bruno", "Júlia", "Ayong"];
+
+            // for (var i = 0; i < alunos.lenght; i++)
+            // {
+            //     alert(alunos[i]);
+            // }
+
+            // var nomeCompleto = "";
+            // var professor = 
+            // {
+            //     nome: "Fabrício",
+            //     sobrenome: "Londero"
+            // }
+
+            // for (p in professor)
+            // {
+            //     nomeCompleto += professor[p] + " ";
+            // }
+
+            // alert(nomeCompleto);
+
+            // var num1 = "2";
+            // var num2 = "4";
+
+            // alert(num1 + num2);
+
+            //Exemplo 01 - Mostrar os números ímpares entre 1 e 10 na tela
+            for (var i = 0; i < 10; i++)
+            {
+                if(i % 2 !== "0")
+                {
+                    alert((i) + " é ímpar");
+                }
+            }
+
+
+            //Exemplo 02 - Calcule a mostre a soma dos números 1 até 100
+
+
+            //Exemplo 03 - Adaptar esse exemplo para ele mostrar quantas vezes o botão foi clicado. Quando atingir 5 cliques, não mostra mais mensagens.
+
+            var clicks = 0;
+
+            var teste = document.getElementsByTagName("div");
+            var classes = document.getElementsByClassName("divs");
+            var unico = document.getElementById("div1");
+
+
+        </script> -->
+
+        <!-- <script src="teste.js"></script> -->
+
+
+
+
+        <input type="text" id="nome" onfocusout="minhaFuncao()">
+
+
+    </head>
+
+    <body>
+        <!-- <div id="div1" class="divs">
+            JavaScript
+        </div>
+        <div class="divs">
+            .Net
+        </div>
+
+        JavaScript
+        <button onclick="clicks++;(clicks <=5)?alert(clicks):null;">Ok!</button> -->
+        <!--<button onclick="alert('Botão clicado!');">Ok!</button>-->
+
+            <!--console.log - fica somente para você no debug-->
+            
+    <script>
+        function minhaFuncao()
+        {
+            var nome = document.getElementById("nome");
+            nome.value = nome.value.toUpperCase();
+        }
+    </script>
+
+    </body>
+    
+</html>
