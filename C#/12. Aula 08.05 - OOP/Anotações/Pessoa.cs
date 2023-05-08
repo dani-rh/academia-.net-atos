@@ -34,8 +34,5 @@ namespace Anotações
             get { return nome; }
             set { nome = value; }
         }
-
-
-
     }
 }
