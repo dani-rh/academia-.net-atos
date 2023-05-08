@@ -27,6 +27,8 @@
                 idade = int.Parse(Console.ReadLine());
                 Pessoa p = new Pessoa(idade);
             }
+
+            Console.ReadLine();
         }
     }
 }

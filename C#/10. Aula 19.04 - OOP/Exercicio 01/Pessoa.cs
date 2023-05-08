@@ -14,7 +14,7 @@ namespace Exercicio_01
         {
             this.nome = nome;
             this.idade = idade;
-            Console.WriteLine("Nome: "+nome+" Idade: "+idade);
+            Console.WriteLine("Nome: "+nome+" e idade: "+idade);
         }
 
         public Pessoa(int idade)
