@@ -28,8 +28,11 @@ namespace Exemplo_02
 
             Computador c2 = new Computador("HP", "HP ProBook 640 G2", 1, 3.000);
 
-            Console.WriteLine(c1.retornInfos);
-            Console.WriteLine(c2.retornInfos);
+            Console.WriteLine(c1.retornInfos());
+            Console.WriteLine(c2.retornInfos());
+
+            Console.ReadLine();
+
             //Console.WriteLine("Computador 1: ");
             //c1.exibeDados();
             //Console.WriteLine("Computador 2: ");

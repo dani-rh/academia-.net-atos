@@ -13,7 +13,7 @@ namespace Anotações
 
             Console.WriteLine("Digite o nome da pessoa: ");
             p.nome = Console.ReadLine();//aqui estou atribuindo nome
-
+            
             Console.WriteLine("Digite a idade da pessoa: ");
             p.idade = int.Parse(Console.ReadLine()); //aqui estou atribuindo idade
 

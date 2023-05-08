@@ -8,8 +8,8 @@ namespace Anotações
 {
     internal class Pessoa
     {
-        public string nome;
-        public int idade;
+        private string nome;
+        private int idade;
 
         public Pessoa()
         {
@@ -20,6 +20,7 @@ namespace Anotações
         {
             this.nome = nome;
             this.idade = idade;
+            
             //para receber aquilo que já defini como parametro - Snow, 6 anos
         }
 
