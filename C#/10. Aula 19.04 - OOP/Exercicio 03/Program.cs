@@ -4,8 +4,22 @@
     {
         static void Main(string[] args)
         {
-            //Exercício 03 - Crie uma classe principal, com 3 objetos, cada um instanciando a classe com
-            //um construtor diferente.
+            //Exercício 03 - Crie uma classe ContaCorrente que obedeça à descrição abaixo: A classe possui o atributo saldo do tipo 
+            //double e os métodos definirSaldoInicial, depositar e sacar.O método definirSaldoInicial deve atribuir o
+            //valor passado por parâmetro ao atribuito saldo O método depositar, deve adicionar o valor passado por
+            //parâmetro ao atributo saldo O método sacar deve reduzir o valor passado por parâmetro do saldo já
+            //existente Necessário verificar a condição de o valor do saldo ser insuficiente para o saque que se deseja
+            //fazer.O valor de retorno deve ser true(verdadeiro) quando for possível realizar o saque e false(falso)
+            //quando não for possível
+
+            ContaCorrente conta = new ContaCorrente();
+
+            conta.definirSaldoInicial();
+            conta.depositar();
+            bool saque1 = conta.sacar();
+            
+            Console.WriteLine("Saldo atual da conta: "+conta.getSaldo());
+
         }
     }
 }
