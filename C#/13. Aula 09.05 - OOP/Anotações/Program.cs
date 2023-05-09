@@ -49,7 +49,10 @@
                 Console.WriteLine("Complemento: "+pessoa.End.Complemento);
             }
 
-
+            for (int i = 0; i< listaPessoas.Count; i++)
+            {
+                Console.WriteLine("Elemento "+i+" Nome: " + listaPessoas[i].Nome);
+            }
 
         }
     }
