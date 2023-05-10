@@ -2,7 +2,7 @@
     Dois para trocar a cor da fonte, de branco para preto e vice-versa e 
     outros dois para fazer o mesmo com o fundo do parágrafo. Use divs se julgar necessário. -->
 
-    <!-- <!DOCTYPE html>
+    <!DOCTYPE html>
     <html>
         <head>
             <title>Exercício 06</title>
@@ -14,23 +14,21 @@
                 }
             </style>
             <script>
-                function toggleColor(elementId) {
-                    var element = document.getElementById(elementId);
-                    var currentColor = element.style.backgroundColor;
-                    if (currentColor === "white") {
-                        element.style.backgroundColor = "black";
+                function toggleBackgroundColor(elementId) {
+                    var divParagrafo = document.getElementById("paragrafo");
+                    if (elementId === "white") {
+                        divParagrafo.style.backgroundColor = "white";
                     } else {
-                        element.style.backgroundColor = "white";
+                        divParagrafo.style.backgroundColor = "black";
                     }
                 }
                 
-                function toggleTextColor() {
-                    var element = document.getElementById("paragrafo");
-                    var currentColor = element.style.color;
-                    if (currentColor === "black") {
-                        element.style.color = "white";
+                function toggleTextColor(elementId) {
+                    var divParagrafo = document.getElementById("paragrafo");
+                    if (elementId === "white") {
+                        divParagrafo.style.color = "white";
                     } else {
-                        element.style.color = "black";
+                        divParagrafo.style.color = "black";
                     }
                 }
             </script>
@@ -40,8 +38,14 @@
                 <p>Este é um parágrafo com um texto de exemplo.</p>
             </div>
             <div>
-                <button onclick="toggleColor('paragrafo')">Alternar Fundo</button>
-                <button onclick="toggleTextColor()">Alternar Cor da Fonte</button>
+                <p>Alterar cor do fundo: </p>
+                <button onclick="toggleBackgroundColor(id)" id="white">De preto para branco</button>
+                <button onclick="toggleBackgroundColor(id)" id="black">De branco para preto</button>
+            </div>
+            <div>
+                <p>Alterar cor da fonte: </p>
+                <button onclick="toggleTextColor(id)" id="white">De preto para branco</button>
+                <button onclick="toggleTextColor(id)" id="black">De branco para preto</button>
             </div>
         </body>
-    </html> -->
+    </html>
