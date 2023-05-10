@@ -1,0 +1,58 @@
+    <!-- Exercício 09 - Crie um formulário com os campos para cadastrar o usuário de um sistema 
+    (login, senha e confirmar senha). Permita que a página seja submetida apenas se todos 
+    os campos estiverem preenchidos, se os campos senha e confirma senha forem iguais 
+    e a senha possuir entre 6 e 10 caracteres. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 09</title>
+        <script>
+        function validarFormulario() 
+        {
+            var login = document.getElementById("login").value;
+            var senha = document.getElementById("senha").value;
+            var confirmarSenha = document.getElementById("confirmarSenha").value;
+        
+            //Verificar se todos os campos estão preenchidos
+        if (login === "" || senha === "" || confirmarSenha === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+
+        // Verificar se os campos senhas e confirmar senhas são iguais
+        if (senha !== confirmarSenha) {
+                alert("As senhas não são iguais.");
+                return false;
+            }
+        
+        // Verificar se a senha possui entre 6 e 10 caracteres
+        if (senha.length < 6 || senha.length > 10) {
+                alert("A senha deve possuir entre 6 e 10 caracteres.");
+                return false;
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h1>Formulário para cadastro de usuário</h1>
+    <form onsubmit = "return validarFormulario()">
+        
+        <label for="login" >Login: </label>
+        <input type="text" id="login" name="login" required><br>
+        
+        <label for="senha" >Senha: </label>
+        <input type="password" id="senha" name="senha" required><br>
+        
+        <label for="confirmarSenha">Confirmar senha </label>
+        <input type="password" id="confirmarSenha" name="confirmarSenha" required><br>
+
+        <input type="submit" value="Cadastrar">
+
+    </form>
+    
+    </body>
+</html>
+
+    
+
