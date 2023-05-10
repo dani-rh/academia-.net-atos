@@ -1,0 +1,67 @@
+<!--Exercício 07 - Crie um botão + (mais) e outro - (menos) na mesma página do exercício anterior. 
+    Esses botões aumentam e diminuem o tamanho da fonte, respectivamente. -->
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Exercício 07</title>
+            <style>
+                #paragrafo {
+                    background-color: white;
+                    color: black;
+                    padding: 20px;
+                }
+            </style>
+            <script>
+                function toggleBackgroundColor(elementId) {
+                    let divParagrafo = document.getElementById("paragrafo");
+                    if (elementId === "white") {
+                        divParagrafo.style.backgroundColor = "white";
+                    } else {
+                        divParagrafo.style.backgroundColor = "black";
+                    }
+                }
+                
+                function toggleTextColor(elementId) {
+                    let divParagrafo = document.getElementById("paragrafo");
+                    if (elementId === "white") {
+                        divParagrafo.style.color = "white";
+                    } else {
+                        divParagrafo.style.color = "black";
+                    }
+                }
+
+                function changeTextSize (buttonId) {
+                    const text = document.getElementById("text");
+                    let currentSize = parseInt(window.getComputedStyle(text).fontSize);
+                    if(buttonId === "plus") {
+                        text.style.fontSize = (currentSize + 2) + "px";
+                    }
+                    else if (buttonId === "minus"){
+                        text.style.fontSize = (currentSize - 2) + "px";
+                    }
+                }
+
+            </script>
+        </head>
+        <body>
+            <div id="paragrafo">
+                <p id="text">Este é um parágrafo com um texto de exemplo.</p>
+            </div>
+            <div>
+                <p>Alterar cor do fundo: </p>
+                <button onclick="toggleBackgroundColor(id)" id="white">De preto para branco</button>
+                <button onclick="toggleBackgroundColor(id)" id="black">De branco para preto</button>
+            </div>
+            <div>
+                <p>Alterar cor da fonte: </p>
+                <button onclick="toggleTextColor(id)" id="white">De preto para branco</button>
+                <button onclick="toggleTextColor(id)" id="black">De branco para preto</button>
+            </div>
+            <div>
+                <p>Alterar tamanho da fonte: </p>
+                <button onclick="changeTextSize(id)" id="plus">+</button>
+                <button onclick="changeTextSize(id)" id="minus">-</button>
+            </div>
+        </body>
+    </html>
