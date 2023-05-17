@@ -12,7 +12,7 @@ namespace Menu
         public static bool validaNome(string nome)
         {
             string[] vetor = nome.Split();
-            if(vetor.Length < 2)
+            if (vetor.Length < 2)
             {
                 return false;
             }
@@ -41,9 +41,9 @@ namespace Menu
 
             do
             {
-            Console.WriteLine("Nome: ");
-            nome = Console.ReadLine().ToUpper();
-            }while (!validaNome(nome));
+                Console.WriteLine("Nome: ");
+                nome = Console.ReadLine().ToUpper();
+            } while (!validaNome(nome));
 
             do
             {
@@ -53,7 +53,7 @@ namespace Menu
 
             pessoa = new Pessoa(nome, dataNascimento);
 
-            if(!lista.Contains(pessoa)) 
+            if (!lista.Contains(pessoa))
             {
                 lista.Add(pessoa);
                 Persistencia.atualizarPessoaArquivo(pessoa, "dados.dat");
@@ -97,6 +97,31 @@ namespace Menu
             }
         }
 
+        //Case 4 - Pesquisar
+        public static void pesquisar(List<Pessoa> lista)
+        {
+            Console.Write("Digite nome a ser pesquisado: ");
+            string nomePesquisado = Console.ReadLine().ToUpper();
+
+            bool pessoaEncontrada = false;
+
+            foreach (var item in lista)
+            {
+                if (item.Nome.ToUpper().Contains(nomePesquisado))
+                {
+                    Console.WriteLine(item);
+                    pessoaEncontrada = true;
+                }
+                if (pessoaEncontrada)
+                {
+                    Console.WriteLine("Pessoa(s) localizada(s) na base de dados!");
+                }
+                else
+                {
+                    Console.WriteLine("Pessoa não localizada na base de dados!");
+                }
+            }
+        }
 
     }
 }

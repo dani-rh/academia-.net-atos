@@ -34,8 +34,6 @@ namespace Menu
             List<Pessoa> listaPessoas = new List<Pessoa>();
             string nomeArquivo = "dados.dat";
             
-            
-
             string opcao;
             do {
                 Console.WriteLine("1 - Cadastrar pessoa");
@@ -58,11 +56,11 @@ namespace Menu
                         //rotina para listar pessoa
                         Comunicacao.listar(listaPessoas);
                         break;
-                    //case "3":
-                    //    Console.WriteLine("Pesquisando pessoa");
-                    //    //rotina para pesquisar pessoa
-                    //    Comunicacao.pesquisar(listaPessoa);
-                    //    break;
+                    case "3":
+                        Console.WriteLine("Pesquisando pessoa");
+                        //rotina para pesquisar pessoa
+                        Comunicacao.pesquisar(listaPessoas);
+                        break;
                     case "4":
                         Console.WriteLine("Excluindo pessoa");
                         //rotina para excluir pessoa
