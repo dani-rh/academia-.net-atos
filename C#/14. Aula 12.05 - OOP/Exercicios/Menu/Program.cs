@@ -6,7 +6,6 @@ namespace Menu
     {
         static void Main(string[] args)
         {
-
             //    Desafio: Programa em C# no modo terminal, tendo como base o seguinte MENU.
 
             //Menu
@@ -27,14 +26,15 @@ namespace Menu
             //        -StreamReader(classe leitora)
             //        - StreamWriter(classe escritora)
 
-            //    Cadastrar->nome e dataNascimento -> constroi objeto com email gerado->joga na lista -> atualizar arquivo
+            //    Cadastrar->nome e dataNascimento -> constrói objeto com email gerado->joga na lista -> atualizar arquivo
             //    Listar->mostrar a lista
             //    Pesquisar->percorrer a lista a procura de alguma pessoa
             //    Excluir->pesquisar->retirar da lista -> atualizar arquivo
 
             List<Pessoa> listaPessoas = new List<Pessoa>();
             string nomeArquivo = "dados.dat";
-            Persistencia.popularArquivoLista(nomeArquivo, listaPessoas); //conectando com a base de dados
+            
+            
 
             string opcao;
             do {
@@ -58,11 +58,11 @@ namespace Menu
                         //rotina para listar pessoa
                         Comunicacao.listar(listaPessoas);
                         break;
-                    case "3":
-                        Console.WriteLine("Pesquisando pessoa");
-                        //rotina para pesquisar pessoa
-                        Comunicacao.pesquisar(listaPessoa);
-                        break;
+                    //case "3":
+                    //    Console.WriteLine("Pesquisando pessoa");
+                    //    //rotina para pesquisar pessoa
+                    //    Comunicacao.pesquisar(listaPessoa);
+                    //    break;
                     case "4":
                         Console.WriteLine("Excluindo pessoa");
                         //rotina para excluir pessoa
@@ -70,7 +70,6 @@ namespace Menu
                         break;
                     case "5":
                         Console.WriteLine("Obrigada por usar o sistema.");
-                        //rotina para sair
                         break;
 
                     default:
@@ -81,35 +80,8 @@ namespace Menu
                 Console.ReadKey();
             } while (opcao != "5");
 
+            Persistencia.popularArquivoLista(nomeArquivo, listaPessoas); //conectando com a base de dados
 
-            Persistencia.exibirLista(listaPessoas);
-
-            Console.WriteLine("Digite o nome a ser excluído: ");
-            nome = Console.ReadLine();
-
-            bool removeu = false;
-            foreach (var item in listaPessoas)
-            {
-                if (nomeArquivo == item.Nome)
-                {
-                    listaPessoas.Remove(item);
-                    removeu = true;
-                    break;
-                }
-            }
-
-            if (removeu)
-            {
-                Persistencia.gravarListaArquivo(listaPessoas, "dados.dat");
-            }
-
-
-
-
-            //{
-            //    List<Pessoa> listaPessoas = new List<Pessoa>();
-
-            //}
         }
     }
 }
