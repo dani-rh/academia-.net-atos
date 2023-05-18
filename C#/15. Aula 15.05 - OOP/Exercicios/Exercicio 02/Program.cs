@@ -10,6 +10,26 @@
             //Criar um método Dirigir na classe Veiculo que imprime "Dirigindo o <marca> <modelo>".
             //Em seguida, criar um método Dirigir na classe Carro que imprime "Dirigindo o <marca> <modelo> com <quantidadeDePortas> portas"
             //e um método Dirigir na classe Moto que imprime "Dirigindo a <marca> <modelo> com <cilindrada> cilindradas".
+
+            Carro carro = new Carro();
+            {
+                carro.Marca = "Chevrolet";
+                carro.Modelo = "Onix Premier";
+                carro.QuantidadeDePortas = 4;
+            }
+
+            Moto moto = new Moto();
+            {
+                moto.Marca = "Yamaha";
+                moto.Modelo = "Bis";
+                moto.Cilindrada = 500;
+            }
+
+            carro.Dirigir();
+            Console.WriteLine();
+            moto.Dirigir();
+
+            Console.ReadKey();
         }
     }
 }
