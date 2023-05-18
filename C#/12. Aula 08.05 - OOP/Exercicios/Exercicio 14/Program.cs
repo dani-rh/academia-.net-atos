@@ -34,7 +34,6 @@
                         Console.WriteLine("Digite a altura da pessoa:");
                         float altura = float.Parse(Console.ReadLine());
                         agenda.ArmazenaPessoa(nome, idade, altura);
-                        Console.WriteLine("Pessoa adicionada com sucesso.");
                         break;
 
                     case "2":
@@ -71,7 +70,6 @@
                 Console.WriteLine();
 
             }
-
         }
     }
 }

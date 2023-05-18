@@ -29,6 +29,7 @@ namespace Exercicio_14
 
                 pessoas[contador] = pessoa;
                 contador++;
+                Console.WriteLine("Pessoa adicionada com sucesso.");
             }
             else
             {
@@ -86,8 +87,10 @@ namespace Exercicio_14
             {
                 Console.WriteLine("A agenda está vazia.");
             }
-
-            Console.WriteLine("Dados das pessoas na agenda: ");
+            else
+            {
+                Console.WriteLine("Dados das pessoas na agenda: ");
+            }
 
             for (int i = 0; i < contador; i++)
             {
