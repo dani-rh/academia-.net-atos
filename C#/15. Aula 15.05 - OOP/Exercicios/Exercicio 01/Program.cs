@@ -10,7 +10,24 @@
             //Em seguida, criar um método Apresentar na classe Aluno que imprime o nome, a idade e a matrícula do aluno,
             //e um método Apresentar na classe Professor que imprime o nome, a idade e a disciplina do professor.
 
-            Console.WriteLine("Hello");
+            Aluno aluno = new Aluno();
+            {
+                aluno.Nome = "João";
+                aluno.Idade = 25;
+                aluno.Matricula = "2014009856";
+            }
+
+            Professor professor = new Professor();
+            {
+                professor.Nome = "Daniela";
+                professor.Idade = 45;
+                professor.Disciplina = "Matemática";
+            }
+
+            aluno.Apresentar();
+            Console.WriteLine();
+            professor.Apresentar();
+
             Console.ReadKey();
         }
     }
