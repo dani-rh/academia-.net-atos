@@ -10,7 +10,7 @@ namespace Exercicio_02
     {
         public int Cilindrada { get; set; }
 
-        public void Dirigir()
+        public new void Dirigir()
         {
             base.Dirigir();
             Console.Write(" com "+Cilindrada+" cilindradas.");
