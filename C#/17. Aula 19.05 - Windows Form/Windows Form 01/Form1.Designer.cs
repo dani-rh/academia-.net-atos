@@ -36,6 +36,7 @@
             labelEmail = new Label();
             textBoxEmail = new TextBox();
             textBoxListaEmail = new TextBox();
+            buttonLimpar = new Button();
             SuspendLayout();
             // 
             // LabelJogador
@@ -111,14 +112,26 @@
             textBoxListaEmail.Multiline = true;
             textBoxListaEmail.Name = "textBoxListaEmail";
             textBoxListaEmail.ReadOnly = true;
+            textBoxListaEmail.ScrollBars = ScrollBars.Vertical;
             textBoxListaEmail.Size = new Size(290, 182);
             textBoxListaEmail.TabIndex = 7;
+            // 
+            // buttonLimpar
+            // 
+            buttonLimpar.Location = new Point(98, 201);
+            buttonLimpar.Name = "buttonLimpar";
+            buttonLimpar.Size = new Size(81, 23);
+            buttonLimpar.TabIndex = 8;
+            buttonLimpar.Text = "Limpar";
+            buttonLimpar.UseVisualStyleBackColor = true;
+            buttonLimpar.Click += buttonLimpar_Click;
             // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(645, 394);
+            ClientSize = new Size(645, 271);
+            Controls.Add(buttonLimpar);
             Controls.Add(textBoxListaEmail);
             Controls.Add(textBoxEmail);
             Controls.Add(labelEmail);
@@ -144,5 +157,6 @@
         private Label labelEmail;
         private TextBox textBoxEmail;
         private TextBox textBoxListaEmail;
+        private Button buttonLimpar;
     }
 }
