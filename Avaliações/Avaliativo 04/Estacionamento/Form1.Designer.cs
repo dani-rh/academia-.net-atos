@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label_Placa = new Label();
             textBox_Placa = new TextBox();
             button_Entrada = new Button();
@@ -40,6 +41,9 @@
             label4 = new Label();
             textBox_listaSaidaDeVeiculos = new TextBox();
             dateTimePicker_dataAtual = new DateTimePicker();
+            label_horarioAtual = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            textBox_horaEntrada = new TextBox();
             SuspendLayout();
             // 
             // label_Placa
@@ -57,6 +61,7 @@
             textBox_Placa.Name = "textBox_Placa";
             textBox_Placa.Size = new Size(458, 39);
             textBox_Placa.TabIndex = 1;
+            textBox_Placa.TextChanged += textBox_Placa_TextChanged;
             // 
             // button_Entrada
             // 
@@ -66,6 +71,7 @@
             button_Entrada.TabIndex = 2;
             button_Entrada.Text = "Entrada do veículo";
             button_Entrada.UseVisualStyleBackColor = true;
+            button_Entrada.Click += button_Entrada_Click;
             // 
             // button_saida
             // 
@@ -149,11 +155,35 @@
             dateTimePicker_dataAtual.TabIndex = 11;
             dateTimePicker_dataAtual.Value = new DateTime(2023, 5, 24, 19, 41, 27, 0);
             // 
+            // label_horarioAtual
+            // 
+            label_horarioAtual.AutoSize = true;
+            label_horarioAtual.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label_horarioAtual.Location = new Point(1063, 58);
+            label_horarioAtual.Name = "label_horarioAtual";
+            label_horarioAtual.Size = new Size(136, 45);
+            label_horarioAtual.TabIndex = 12;
+            label_horarioAtual.Text = "14:45:50";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
+            // textBox_horaEntrada
+            // 
+            textBox_horaEntrada.Location = new Point(455, 279);
+            textBox_horaEntrada.Name = "textBox_horaEntrada";
+            textBox_horaEntrada.Size = new Size(200, 39);
+            textBox_horaEntrada.TabIndex = 13;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1235, 1151);
+            Controls.Add(textBox_horaEntrada);
+            Controls.Add(label_horarioAtual);
             Controls.Add(dateTimePicker_dataAtual);
             Controls.Add(label4);
             Controls.Add(textBox_listaSaidaDeVeiculos);
@@ -187,5 +217,8 @@
         private Label label4;
         private TextBox textBox_listaSaidaDeVeiculos;
         private DateTimePicker dateTimePicker_dataAtual;
+        private Label label_horarioAtual;
+        private System.Windows.Forms.Timer timer1;
+        private TextBox textBox_horaEntrada;
     }
 }
