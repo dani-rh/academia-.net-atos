@@ -1,0 +1,191 @@
+﻿namespace Estacionamento
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label_Placa = new Label();
+            textBox_Placa = new TextBox();
+            button_Entrada = new Button();
+            button_saida = new Button();
+            label_HoraEntrada = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            textBox_listaEntradaDeVeiculos = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
+            textBox_listaSaidaDeVeiculos = new TextBox();
+            dateTimePicker_dataAtual = new DateTimePicker();
+            SuspendLayout();
+            // 
+            // label_Placa
+            // 
+            label_Placa.AutoSize = true;
+            label_Placa.Location = new Point(227, 209);
+            label_Placa.Name = "label_Placa";
+            label_Placa.Size = new Size(199, 32);
+            label_Placa.TabIndex = 0;
+            label_Placa.Text = "Placa do Veículo: ";
+            // 
+            // textBox_Placa
+            // 
+            textBox_Placa.Location = new Point(455, 209);
+            textBox_Placa.Name = "textBox_Placa";
+            textBox_Placa.Size = new Size(458, 39);
+            textBox_Placa.TabIndex = 1;
+            // 
+            // button_Entrada
+            // 
+            button_Entrada.Location = new Point(227, 429);
+            button_Entrada.Name = "button_Entrada";
+            button_Entrada.Size = new Size(325, 46);
+            button_Entrada.TabIndex = 2;
+            button_Entrada.Text = "Entrada do veículo";
+            button_Entrada.UseVisualStyleBackColor = true;
+            // 
+            // button_saida
+            // 
+            button_saida.Location = new Point(586, 429);
+            button_saida.Name = "button_saida";
+            button_saida.Size = new Size(327, 46);
+            button_saida.TabIndex = 3;
+            button_saida.Text = "Saída do veículo";
+            button_saida.UseVisualStyleBackColor = true;
+            // 
+            // label_HoraEntrada
+            // 
+            label_HoraEntrada.AutoSize = true;
+            label_HoraEntrada.Location = new Point(257, 286);
+            label_HoraEntrada.Name = "label_HoraEntrada";
+            label_HoraEntrada.Size = new Size(157, 32);
+            label_HoraEntrada.TabIndex = 4;
+            label_HoraEntrada.Text = "Hora Entrada:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(280, 359);
+            label1.Name = "label1";
+            label1.Size = new Size(134, 32);
+            label1.TabIndex = 5;
+            label1.Text = "Hora Saída:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(350, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(68, 32);
+            label2.TabIndex = 6;
+            label2.Text = "Data:";
+            // 
+            // textBox_listaEntradaDeVeiculos
+            // 
+            textBox_listaEntradaDeVeiculos.Location = new Point(44, 775);
+            textBox_listaEntradaDeVeiculos.Multiline = true;
+            textBox_listaEntradaDeVeiculos.Name = "textBox_listaEntradaDeVeiculos";
+            textBox_listaEntradaDeVeiculos.Size = new Size(508, 343);
+            textBox_listaEntradaDeVeiculos.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(44, 726);
+            label3.Name = "label3";
+            label3.Size = new Size(281, 32);
+            label3.TabIndex = 8;
+            label3.Text = "Lista Entrada de Veículos:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(697, 726);
+            label4.Name = "label4";
+            label4.Size = new Size(258, 32);
+            label4.TabIndex = 10;
+            label4.Text = "Lista Saída de Veículos:";
+            // 
+            // textBox_listaSaidaDeVeiculos
+            // 
+            textBox_listaSaidaDeVeiculos.Location = new Point(697, 775);
+            textBox_listaSaidaDeVeiculos.Multiline = true;
+            textBox_listaSaidaDeVeiculos.Name = "textBox_listaSaidaDeVeiculos";
+            textBox_listaSaidaDeVeiculos.Size = new Size(508, 343);
+            textBox_listaSaidaDeVeiculos.TabIndex = 9;
+            // 
+            // dateTimePicker_dataAtual
+            // 
+            dateTimePicker_dataAtual.CustomFormat = "dd/MM/yyyy";
+            dateTimePicker_dataAtual.Enabled = false;
+            dateTimePicker_dataAtual.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker_dataAtual.Format = DateTimePickerFormat.Custom;
+            dateTimePicker_dataAtual.Location = new Point(471, 65);
+            dateTimePicker_dataAtual.Name = "dateTimePicker_dataAtual";
+            dateTimePicker_dataAtual.Size = new Size(400, 39);
+            dateTimePicker_dataAtual.TabIndex = 11;
+            dateTimePicker_dataAtual.Value = new DateTime(2023, 5, 24, 19, 41, 27, 0);
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1235, 1151);
+            Controls.Add(dateTimePicker_dataAtual);
+            Controls.Add(label4);
+            Controls.Add(textBox_listaSaidaDeVeiculos);
+            Controls.Add(label3);
+            Controls.Add(textBox_listaEntradaDeVeiculos);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(label_HoraEntrada);
+            Controls.Add(button_saida);
+            Controls.Add(button_Entrada);
+            Controls.Add(textBox_Placa);
+            Controls.Add(label_Placa);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label label_Placa;
+        private TextBox textBox_Placa;
+        private Button button_Entrada;
+        private Button button_saida;
+        private Label label_HoraEntrada;
+        private Label label1;
+        private Label label2;
+        private TextBox textBox_listaEntradaDeVeiculos;
+        private Label label3;
+        private Label label4;
+        private TextBox textBox_listaSaidaDeVeiculos;
+        private DateTimePicker dateTimePicker_dataAtual;
+    }
+}
