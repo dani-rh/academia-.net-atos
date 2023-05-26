@@ -45,6 +45,8 @@
             timer1 = new System.Windows.Forms.Timer(components);
             textBox_horaEntrada = new TextBox();
             textBox_horaSaida = new TextBox();
+            label5 = new Label();
+            textBox_tempoDePermanencia = new TextBox();
             SuspendLayout();
             // 
             // label_Placa
@@ -184,11 +186,30 @@
             textBox_horaSaida.Size = new Size(200, 39);
             textBox_horaSaida.TabIndex = 14;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(283, 522);
+            label5.Name = "label5";
+            label5.Size = new Size(269, 32);
+            label5.TabIndex = 15;
+            label5.Text = "Tempo de Permanencia:";
+            // 
+            // textBox_tempoDePermanencia
+            // 
+            textBox_tempoDePermanencia.Location = new Point(589, 522);
+            textBox_tempoDePermanencia.Name = "textBox_tempoDePermanencia";
+            textBox_tempoDePermanencia.ReadOnly = true;
+            textBox_tempoDePermanencia.Size = new Size(200, 39);
+            textBox_tempoDePermanencia.TabIndex = 16;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1235, 1151);
+            Controls.Add(textBox_tempoDePermanencia);
+            Controls.Add(label5);
             Controls.Add(textBox_horaSaida);
             Controls.Add(textBox_horaEntrada);
             Controls.Add(label_horarioAtual);
@@ -229,5 +250,7 @@
         private System.Windows.Forms.Timer timer1;
         private TextBox textBox_horaEntrada;
         private TextBox textBox_horaSaida;
+        private Label label5;
+        private TextBox textBox_tempoDePermanencia;
     }
 }

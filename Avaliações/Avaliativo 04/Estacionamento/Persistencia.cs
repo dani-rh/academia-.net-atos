@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,10 @@ namespace Estacionamento
                         if (dados.Length == 3)
                         {
                             string placaVeiculo = dados[0];
-                            DateTime dataEntrada = DateTime.Parse(dados[1]);
+                            DateTime dataEntradaFormatada = DateTime.ParseExact(dados[1], "dd/MM/yyyy", CultureInfo.InvariantCulture);
                             TimeSpan horaEntrada = TimeSpan.Parse(dados[2]);
 
-                            Veiculo veiculo = new Veiculo(placaVeiculo, dataEntrada, horaEntrada);
+                            Veiculo veiculo = new Veiculo(placaVeiculo, dataEntradaFormatada, horaEntrada);
                             listaVeiculosEntrada.Add(veiculo);
                         }
                     }
@@ -77,7 +78,7 @@ namespace Estacionamento
             {
                 foreach(Veiculo veiculo in listaVeiculosEntrada)
                 {
-                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntrada.ToShortDateString()};{veiculo.HoraEntrada.ToString()}";
+                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntradaFormatada};{veiculo.HoraEntrada.ToString()}";
                     escritor.WriteLine(linha);
                 }
             }
@@ -89,7 +90,7 @@ namespace Estacionamento
             {
                 foreach (Veiculo veiculo in listaVeiculosSaida)
                 {
-                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntrada.ToShortDateString()};{veiculo.HoraEntrada.ToString()};{veiculo.TempoPermanencia.TotalMinutes};{veiculo.ValorCobrado}";
+                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntradaFormatada};{veiculo.HoraEntrada.ToString()};{veiculo.TempoPermanencia.TotalMinutes};{veiculo.ValorCobrado}";
                     escritor.WriteLine(linha);
                 }
             }

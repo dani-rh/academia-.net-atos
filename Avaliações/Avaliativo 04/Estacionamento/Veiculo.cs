@@ -21,18 +21,24 @@ namespace Estacionamento
             DataEntrada = dataEntrada;
             HoraEntrada = horaEntrada;
         }
-        public Veiculo (string placaVeiculo)
+        public Veiculo(string placaVeiculo, TimeSpan tempoPermanencia, decimal valorCobrado)
+        {
+            PlacaVeiculo = placaVeiculo;
+            TempoPermanencia = tempoPermanencia;
+            ValorCobrado = valorCobrado;
+        }
+        public Veiculo(string placaVeiculo)
         {
             PlacaVeiculo = placaVeiculo;
         }
         public string PlacaVeiculo
         {
             get { return placaVeiculo; }
-            set 
+            set
             {
                 if (value == null || value.Length < 7)
                     return;
-                
+
                 if (value.Length == 7)
                     placaVeiculo = value;
                 else
@@ -45,6 +51,12 @@ namespace Estacionamento
             get { return dataEntrada; }
             set { dataEntrada = value; }
         }
+
+        public string DataEntradaFormatada
+        {
+            get { return dataEntrada.ToString("dd/MM/yyyy"); }
+        }
+
         public TimeSpan HoraEntrada
         {
             get { return horaEntrada; }
@@ -56,7 +68,10 @@ namespace Estacionamento
             get { return tempoPermanencia; }
             set { tempoPermanencia = value; }
         }
-
+        public string TempoPermanenciaFormatado
+        {
+            get { return TempoPermanencia.ToString(@"hh\:mm"); }
+        }
         public decimal ValorCobrado
         {
             get { return valorCobrado; }
@@ -68,9 +83,9 @@ namespace Estacionamento
 
 
         //jaCadastrada(placa)
-        public static bool jaCadastrada (string placaVeiculo,List<Veiculo>listaEntrada)
+        public static bool jaCadastrada(string placaVeiculo, List<Veiculo> listaEntrada)
         {
-            if(placaVeiculo.Length != 7)
+            if (placaVeiculo.Length != 7)
             {
                 MessageBox.Show("A placa do veículo deve ter 7 caracteres.", "Alerta!");
                 return true; // Indicando que a placa é inválida
@@ -78,7 +93,7 @@ namespace Estacionamento
 
             foreach (Veiculo veiculo in listaEntrada)
             {
-                if(placaVeiculo.Equals(veiculo.placaVeiculo))
+                if (placaVeiculo.Equals(veiculo.placaVeiculo))
                 {
                     return true; // Veículo já cadastrado na lista
                 }
@@ -86,13 +101,19 @@ namespace Estacionamento
             return false;//Veiculo não localizado na lista Veiculo
         }
 
-
-        public static bool temLugar(List<Veiculo> listaVeiculosEntrada, int limiteVagas)
+        public void CalcularValorCobrado(TimeSpan horaSaida)
         {
-            return listaVeiculosEntrada.Count >= limiteVagas;
+            TempoPermanencia = horaSaida - HoraEntrada;
+
+            int horas = (int)TempoPermanencia.TotalHours;
+            if (horas > 0)
+            {
+                ValorCobrado = horas * 2;
+            }
+            else
+            {
+                ValorCobrado = 0;
+            }
         }
-
-
-
     }
 }
