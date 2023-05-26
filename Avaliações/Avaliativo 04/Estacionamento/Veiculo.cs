@@ -30,10 +30,13 @@ namespace Estacionamento
             get { return placaVeiculo; }
             set 
             {
+                if (value == null || value.Length < 7)
+                    return;
+                
                 if (value.Length == 7)
                     placaVeiculo = value;
                 else
-                    throw new ArgumentException("A placa do veículo deve ter 7 caracteres.");
+                    MessageBox.Show("A placa do veículo deve ter 7 caracteres.", "Alerta!");
             }
         }
 
@@ -61,24 +64,33 @@ namespace Estacionamento
         }
 
 
-            //     gerarData()
+        //     gerarData()
 
 
-            //jaCadastrada(placa)
+        //jaCadastrada(placa)
         public static bool jaCadastrada (string placaVeiculo,List<Veiculo>listaEntrada)
         {
-            foreach(Veiculo i in listaEntrada)
+            if(placaVeiculo.Length != 7)
             {
-                if(placaVeiculo.Equals(i.placaVeiculo))
+                MessageBox.Show("A placa do veículo deve ter 7 caracteres.", "Alerta!");
+                return true; // Indicando que a placa é inválida
+            }
+
+            foreach (Veiculo veiculo in listaEntrada)
+            {
+                if(placaVeiculo.Equals(veiculo.placaVeiculo))
                 {
-                    return true;
+                    return true; // Veículo já cadastrado na lista
                 }
             }
             return false;//Veiculo não localizado na lista Veiculo
         }
 
-            //temLugar()
 
+        public static bool temLugar(List<Veiculo> listaVeiculosEntrada, int limiteVagas)
+        {
+            return listaVeiculosEntrada.Count >= limiteVagas;
+        }
 
 
 

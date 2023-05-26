@@ -44,6 +44,7 @@
             label_horarioAtual = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             textBox_horaEntrada = new TextBox();
+            textBox_horaSaida = new TextBox();
             SuspendLayout();
             // 
             // label_Placa
@@ -61,7 +62,6 @@
             textBox_Placa.Name = "textBox_Placa";
             textBox_Placa.Size = new Size(458, 39);
             textBox_Placa.TabIndex = 1;
-            textBox_Placa.TextChanged += textBox_Placa_TextChanged;
             // 
             // button_Entrada
             // 
@@ -111,7 +111,7 @@
             // 
             // textBox_listaEntradaDeVeiculos
             // 
-            textBox_listaEntradaDeVeiculos.Location = new Point(44, 775);
+            textBox_listaEntradaDeVeiculos.Location = new Point(44, 676);
             textBox_listaEntradaDeVeiculos.Multiline = true;
             textBox_listaEntradaDeVeiculos.Name = "textBox_listaEntradaDeVeiculos";
             textBox_listaEntradaDeVeiculos.Size = new Size(508, 343);
@@ -120,7 +120,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(44, 726);
+            label3.Location = new Point(44, 627);
             label3.Name = "label3";
             label3.Size = new Size(281, 32);
             label3.TabIndex = 8;
@@ -129,7 +129,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(697, 726);
+            label4.Location = new Point(697, 627);
             label4.Name = "label4";
             label4.Size = new Size(258, 32);
             label4.TabIndex = 10;
@@ -137,7 +137,7 @@
             // 
             // textBox_listaSaidaDeVeiculos
             // 
-            textBox_listaSaidaDeVeiculos.Location = new Point(697, 775);
+            textBox_listaSaidaDeVeiculos.Location = new Point(697, 676);
             textBox_listaSaidaDeVeiculos.Multiline = true;
             textBox_listaSaidaDeVeiculos.Name = "textBox_listaSaidaDeVeiculos";
             textBox_listaSaidaDeVeiculos.Size = new Size(508, 343);
@@ -177,11 +177,19 @@
             textBox_horaEntrada.Size = new Size(200, 39);
             textBox_horaEntrada.TabIndex = 13;
             // 
+            // textBox_horaSaida
+            // 
+            textBox_horaSaida.Location = new Point(455, 352);
+            textBox_horaSaida.Name = "textBox_horaSaida";
+            textBox_horaSaida.Size = new Size(200, 39);
+            textBox_horaSaida.TabIndex = 14;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1235, 1151);
+            Controls.Add(textBox_horaSaida);
             Controls.Add(textBox_horaEntrada);
             Controls.Add(label_horarioAtual);
             Controls.Add(dateTimePicker_dataAtual);
@@ -220,5 +228,6 @@
         private Label label_horarioAtual;
         private System.Windows.Forms.Timer timer1;
         private TextBox textBox_horaEntrada;
+        private TextBox textBox_horaSaida;
     }
 }
