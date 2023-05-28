@@ -47,102 +47,119 @@
             textBox_horaSaida = new TextBox();
             label5 = new Label();
             textBox_tempoDePermanencia = new TextBox();
+            label6 = new Label();
+            textBox_cobrar = new TextBox();
+            label7 = new Label();
             SuspendLayout();
             // 
             // label_Placa
             // 
             label_Placa.AutoSize = true;
-            label_Placa.Location = new Point(227, 209);
+            label_Placa.Location = new Point(160, 69);
+            label_Placa.Margin = new Padding(2, 0, 2, 0);
             label_Placa.Name = "label_Placa";
-            label_Placa.Size = new Size(199, 32);
+            label_Placa.Size = new Size(99, 15);
             label_Placa.TabIndex = 0;
             label_Placa.Text = "Placa do Veículo: ";
             // 
             // textBox_Placa
             // 
-            textBox_Placa.Location = new Point(455, 209);
+            textBox_Placa.Location = new Point(286, 69);
+            textBox_Placa.Margin = new Padding(2, 1, 2, 1);
             textBox_Placa.Name = "textBox_Placa";
-            textBox_Placa.Size = new Size(458, 39);
-            textBox_Placa.TabIndex = 1;
+            textBox_Placa.Size = new Size(132, 23);
+            textBox_Placa.TabIndex = 2;
             // 
             // button_Entrada
             // 
-            button_Entrada.Location = new Point(227, 429);
+            button_Entrada.Location = new Point(155, 177);
+            button_Entrada.Margin = new Padding(2, 1, 2, 1);
             button_Entrada.Name = "button_Entrada";
-            button_Entrada.Size = new Size(325, 46);
-            button_Entrada.TabIndex = 2;
+            button_Entrada.Size = new Size(175, 22);
+            button_Entrada.TabIndex = 5;
             button_Entrada.Text = "Entrada do veículo";
             button_Entrada.UseVisualStyleBackColor = true;
             button_Entrada.Click += button_Entrada_Click;
             // 
             // button_saida
             // 
-            button_saida.Location = new Point(586, 429);
+            button_saida.Location = new Point(352, 177);
+            button_saida.Margin = new Padding(2, 1, 2, 1);
             button_saida.Name = "button_saida";
-            button_saida.Size = new Size(327, 46);
-            button_saida.TabIndex = 3;
+            button_saida.Size = new Size(176, 22);
+            button_saida.TabIndex = 6;
             button_saida.Text = "Saída do veículo";
             button_saida.UseVisualStyleBackColor = true;
+            button_saida.Click += button_saida_Click;
             // 
             // label_HoraEntrada
             // 
             label_HoraEntrada.AutoSize = true;
-            label_HoraEntrada.Location = new Point(257, 286);
+            label_HoraEntrada.Location = new Point(179, 105);
+            label_HoraEntrada.Margin = new Padding(2, 0, 2, 0);
             label_HoraEntrada.Name = "label_HoraEntrada";
-            label_HoraEntrada.Size = new Size(157, 32);
+            label_HoraEntrada.Size = new Size(79, 15);
             label_HoraEntrada.TabIndex = 4;
             label_HoraEntrada.Text = "Hora Entrada:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(280, 359);
+            label1.Location = new Point(192, 139);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(134, 32);
+            label1.Size = new Size(67, 15);
             label1.TabIndex = 5;
             label1.Text = "Hora Saída:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(350, 65);
+            label2.Location = new Point(224, 32);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(68, 32);
+            label2.Size = new Size(34, 15);
             label2.TabIndex = 6;
             label2.Text = "Data:";
             // 
             // textBox_listaEntradaDeVeiculos
             // 
-            textBox_listaEntradaDeVeiculos.Location = new Point(44, 676);
+            textBox_listaEntradaDeVeiculos.Location = new Point(24, 332);
+            textBox_listaEntradaDeVeiculos.Margin = new Padding(2, 1, 2, 1);
             textBox_listaEntradaDeVeiculos.Multiline = true;
             textBox_listaEntradaDeVeiculos.Name = "textBox_listaEntradaDeVeiculos";
-            textBox_listaEntradaDeVeiculos.Size = new Size(508, 343);
+            textBox_listaEntradaDeVeiculos.ScrollBars = ScrollBars.Vertical;
+            textBox_listaEntradaDeVeiculos.Size = new Size(336, 163);
             textBox_listaEntradaDeVeiculos.TabIndex = 7;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(44, 627);
+            label3.Location = new Point(24, 309);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(281, 32);
+            label3.Size = new Size(139, 15);
             label3.TabIndex = 8;
             label3.Text = "Lista Entrada de Veículos:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(697, 627);
+            label4.Location = new Point(375, 309);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(258, 32);
+            label4.Size = new Size(127, 15);
             label4.TabIndex = 10;
             label4.Text = "Lista Saída de Veículos:";
             // 
             // textBox_listaSaidaDeVeiculos
             // 
-            textBox_listaSaidaDeVeiculos.Location = new Point(697, 676);
+            textBox_listaSaidaDeVeiculos.Location = new Point(375, 332);
+            textBox_listaSaidaDeVeiculos.Margin = new Padding(2, 1, 2, 1);
             textBox_listaSaidaDeVeiculos.Multiline = true;
             textBox_listaSaidaDeVeiculos.Name = "textBox_listaSaidaDeVeiculos";
-            textBox_listaSaidaDeVeiculos.Size = new Size(508, 343);
+            textBox_listaSaidaDeVeiculos.ScrollBars = ScrollBars.Vertical;
+            textBox_listaSaidaDeVeiculos.Size = new Size(336, 163);
             textBox_listaSaidaDeVeiculos.TabIndex = 9;
             // 
             // dateTimePicker_dataAtual
@@ -151,19 +168,21 @@
             dateTimePicker_dataAtual.Enabled = false;
             dateTimePicker_dataAtual.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePicker_dataAtual.Format = DateTimePickerFormat.Custom;
-            dateTimePicker_dataAtual.Location = new Point(471, 65);
+            dateTimePicker_dataAtual.Location = new Point(286, 30);
+            dateTimePicker_dataAtual.Margin = new Padding(2, 1, 2, 1);
             dateTimePicker_dataAtual.Name = "dateTimePicker_dataAtual";
-            dateTimePicker_dataAtual.Size = new Size(400, 39);
-            dateTimePicker_dataAtual.TabIndex = 11;
+            dateTimePicker_dataAtual.Size = new Size(132, 23);
+            dateTimePicker_dataAtual.TabIndex = 1;
             dateTimePicker_dataAtual.Value = new DateTime(2023, 5, 24, 19, 41, 27, 0);
             // 
             // label_horarioAtual
             // 
             label_horarioAtual.AutoSize = true;
             label_horarioAtual.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label_horarioAtual.Location = new Point(1063, 58);
+            label_horarioAtual.Location = new Point(641, 32);
+            label_horarioAtual.Margin = new Padding(2, 0, 2, 0);
             label_horarioAtual.Name = "label_horarioAtual";
-            label_horarioAtual.Size = new Size(136, 45);
+            label_horarioAtual.Size = new Size(70, 21);
             label_horarioAtual.TabIndex = 12;
             label_horarioAtual.Text = "14:45:50";
             // 
@@ -174,40 +193,77 @@
             // 
             // textBox_horaEntrada
             // 
-            textBox_horaEntrada.Location = new Point(455, 279);
+            textBox_horaEntrada.Location = new Point(286, 102);
+            textBox_horaEntrada.Margin = new Padding(2, 1, 2, 1);
             textBox_horaEntrada.Name = "textBox_horaEntrada";
-            textBox_horaEntrada.Size = new Size(200, 39);
-            textBox_horaEntrada.TabIndex = 13;
+            textBox_horaEntrada.Size = new Size(132, 23);
+            textBox_horaEntrada.TabIndex = 3;
             // 
             // textBox_horaSaida
             // 
-            textBox_horaSaida.Location = new Point(455, 352);
+            textBox_horaSaida.Location = new Point(286, 136);
+            textBox_horaSaida.Margin = new Padding(2, 1, 2, 1);
             textBox_horaSaida.Name = "textBox_horaSaida";
-            textBox_horaSaida.Size = new Size(200, 39);
-            textBox_horaSaida.TabIndex = 14;
+            textBox_horaSaida.Size = new Size(132, 23);
+            textBox_horaSaida.TabIndex = 4;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(283, 522);
+            label5.Location = new Point(125, 219);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(269, 32);
+            label5.Size = new Size(134, 15);
             label5.TabIndex = 15;
             label5.Text = "Tempo de Permanencia:";
             // 
             // textBox_tempoDePermanencia
             // 
-            textBox_tempoDePermanencia.Location = new Point(589, 522);
+            textBox_tempoDePermanencia.Location = new Point(286, 216);
+            textBox_tempoDePermanencia.Margin = new Padding(2, 1, 2, 1);
             textBox_tempoDePermanencia.Name = "textBox_tempoDePermanencia";
             textBox_tempoDePermanencia.ReadOnly = true;
-            textBox_tempoDePermanencia.Size = new Size(200, 39);
+            textBox_tempoDePermanencia.Size = new Size(110, 23);
             textBox_tempoDePermanencia.TabIndex = 16;
+            textBox_tempoDePermanencia.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(213, 252);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(46, 15);
+            label6.TabIndex = 17;
+            label6.Text = "Cobrar:";
+            // 
+            // textBox_cobrar
+            // 
+            textBox_cobrar.Location = new Point(286, 249);
+            textBox_cobrar.Margin = new Padding(2, 1, 2, 1);
+            textBox_cobrar.Name = "textBox_cobrar";
+            textBox_cobrar.ReadOnly = true;
+            textBox_cobrar.Size = new Size(110, 23);
+            textBox_cobrar.TabIndex = 18;
+            textBox_cobrar.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(574, 36);
+            label7.Name = "label7";
+            label7.Size = new Size(62, 15);
+            label7.TabIndex = 19;
+            label7.Text = "Hora atual";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1235, 1151);
+            ClientSize = new Size(739, 540);
+            Controls.Add(label7);
+            Controls.Add(textBox_cobrar);
+            Controls.Add(label6);
             Controls.Add(textBox_tempoDePermanencia);
             Controls.Add(label5);
             Controls.Add(textBox_horaSaida);
@@ -225,6 +281,9 @@
             Controls.Add(button_Entrada);
             Controls.Add(textBox_Placa);
             Controls.Add(label_Placa);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2, 1, 2, 1);
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -252,5 +311,8 @@
         private TextBox textBox_horaSaida;
         private Label label5;
         private TextBox textBox_tempoDePermanencia;
+        private Label label6;
+        private TextBox textBox_cobrar;
+        private Label label7;
     }
 }

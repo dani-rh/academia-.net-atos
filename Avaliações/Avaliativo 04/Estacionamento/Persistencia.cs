@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -27,10 +28,10 @@ namespace Estacionamento
                         if (dados.Length == 3)
                         {
                             string placaVeiculo = dados[0];
-                            DateTime dataEntradaFormatada = DateTime.ParseExact(dados[1], "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                            DateOnly dataEntrada = DateOnly.Parse(dados[1]);
                             TimeSpan horaEntrada = TimeSpan.Parse(dados[2]);
 
-                            Veiculo veiculo = new Veiculo(placaVeiculo, dataEntradaFormatada, horaEntrada);
+                            Veiculo veiculo = new Veiculo(placaVeiculo, dataEntrada, horaEntrada);
                             listaVeiculosEntrada.Add(veiculo);
                         }
                     }
@@ -54,12 +55,12 @@ namespace Estacionamento
                         if (dados.Length == 5)
                         {
                             string placaVeiculo = dados[0];
-                            DateTime dataEntrada = DateTime.Parse(dados[1]);
-                            TimeSpan horaEntrda = TimeSpan.Parse(dados[2]);
+                            DateOnly dataEntrada = DateOnly.Parse(dados[1]);
+                            TimeSpan horaEntrada = TimeSpan.Parse(dados[2]);
                             TimeSpan tempoPermanencia = TimeSpan.Parse(dados[3]);
                             decimal valorCobrado = decimal.Parse(dados[4]);
 
-                            Veiculo veiculo = new Veiculo(placaVeiculo, dataEntrada, horaEntrda)
+                            Veiculo veiculo = new Veiculo(placaVeiculo, dataEntrada, horaEntrada)
                             {
                                 TempoPermanencia = tempoPermanencia,
                                 ValorCobrado = valorCobrado
@@ -78,7 +79,7 @@ namespace Estacionamento
             {
                 foreach(Veiculo veiculo in listaVeiculosEntrada)
                 {
-                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntradaFormatada};{veiculo.HoraEntrada.ToString()}";
+                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntrada};{veiculo.HoraEntrada.ToString()}";
                     escritor.WriteLine(linha);
                 }
             }
@@ -90,7 +91,7 @@ namespace Estacionamento
             {
                 foreach (Veiculo veiculo in listaVeiculosSaida)
                 {
-                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntradaFormatada};{veiculo.HoraEntrada.ToString()};{veiculo.TempoPermanencia.TotalMinutes};{veiculo.ValorCobrado}";
+                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntrada};{veiculo.HoraEntrada.ToString()};{veiculo.TempoPermanencia.TotalMinutes};{veiculo.ValorCobrado}";
                     escritor.WriteLine(linha);
                 }
             }

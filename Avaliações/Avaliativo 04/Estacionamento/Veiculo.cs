@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -10,23 +11,27 @@ namespace Estacionamento
     internal class Veiculo
     {
         public string placaVeiculo;
-        public DateTime dataEntrada;
+        public DateOnly dataEntrada;
         public TimeSpan horaEntrada;
         public TimeSpan tempoPermanencia;
         public decimal valorCobrado;
 
-        public Veiculo(string placaVeiculo, DateTime dataEntrada, TimeSpan horaEntrada)
+        public Veiculo(string placaVeiculo, DateOnly dataEntrada, TimeSpan horaEntrada)
         {
             PlacaVeiculo = placaVeiculo;
             DataEntrada = dataEntrada;
             HoraEntrada = horaEntrada;
         }
-        public Veiculo(string placaVeiculo, TimeSpan tempoPermanencia, decimal valorCobrado)
+        public Veiculo(string placaVeiculo, DateOnly dataEntrada, TimeSpan horaEntrada, TimeSpan tempoPermanencia, decimal valorCobrado)
         {
             PlacaVeiculo = placaVeiculo;
+            DataEntrada = dataEntrada;
+            HoraEntrada = horaEntrada;
             TempoPermanencia = tempoPermanencia;
             ValorCobrado = valorCobrado;
         }
+
+
         public Veiculo(string placaVeiculo)
         {
             PlacaVeiculo = placaVeiculo;
@@ -46,7 +51,7 @@ namespace Estacionamento
             }
         }
 
-        public DateTime DataEntrada
+        public DateOnly DataEntrada
         {
             get { return dataEntrada; }
             set { dataEntrada = value; }
@@ -101,19 +106,24 @@ namespace Estacionamento
             return false;//Veiculo não localizado na lista Veiculo
         }
 
-        public void CalcularValorCobrado(TimeSpan horaSaida)
+        public void CalcularValorCobrado(TimeSpan horaSaida, TimeSpan horaEntrada)
         {
-            TempoPermanencia = horaSaida - HoraEntrada;
+            TempoPermanencia = horaSaida - horaEntrada;
 
-            int horas = (int)TempoPermanencia.TotalHours;
-            if (horas > 0)
+            int minutos = (int)TempoPermanencia.TotalMinutes;
+            if (minutos > 0)
             {
-                ValorCobrado = horas * 2;
+                int horas = (minutos / 60) + 1;// Arredonda para cima, considerando que a cada 60 minutos é cobrado o valor cheio
+                ValorCobrado = horas * 5;
             }
             else
             {
                 ValorCobrado = 0;
             }
         }
+
+
+
+
     }
 }

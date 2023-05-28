@@ -21,9 +21,10 @@ namespace Estacionamento
         {
             dateTimePicker_dataAtual.Value = DateTime.Today;
             dateTimePicker_dataAtual.Format = DateTimePickerFormat.Custom;
-            dateTimePicker_dataAtual.CustomFormat = "dd/MM/yyyy";
+            dateTimePicker_dataAtual.CustomFormat = "     dd/MM/yyyy";
 
             AtualizarListaVeiculosEntrada();
+            AtualizarListaVeiculosSaida();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace Estacionamento
         {
             foreach (Veiculo veiculo in listaVeiculosSaida)
             {
-                textBox_listaSaidaDeVeiculos.AppendText(veiculo.PlacaVeiculo + Environment.NewLine);
+                textBox_listaSaidaDeVeiculos.AppendText(veiculo.placaVeiculo + " - " + veiculo.DataEntrada + " - " + veiculo.HoraEntrada + " - " + veiculo.tempoPermanencia + " - " + veiculo.valorCobrado + " reais " + Environment.NewLine);
             }
         }
 
@@ -81,6 +82,7 @@ namespace Estacionamento
                 return;
             }
 
+
             //gravar veiculo que não esteja na lista de entrada
             if (Veiculo.jaCadastrada(placa, listaVeiculosEntrada))
             {
@@ -88,7 +90,7 @@ namespace Estacionamento
             }
             else
             {
-                Veiculo veiculo = new Veiculo(placa, DateTime.Today, horaEntrada);
+                Veiculo veiculo = new Veiculo(placa, DateOnly.FromDateTime(DateTime.Today), horaEntrada);
                 listaVeiculosEntrada.Add(veiculo);
 
                 // Atualizar o campo textBox_listaEntradaDeVeiculos
@@ -105,9 +107,9 @@ namespace Estacionamento
             textBox_horaEntrada.Clear();
         }
 
-        private void button_Saida_Click(object sender, MouseEventArgs e)
+        private void button_saida_Click(object sender, EventArgs e)
         {
-            //transformar a placa para maiusculo no momento do registro
+            //transformar a placa para maiúsculo no momento do registro
             string placa = textBox_Placa.Text.ToUpper();
 
             // Verificar se o campo de placa está vazio
@@ -117,7 +119,7 @@ namespace Estacionamento
                 return;
             }
             // Verificar se a placa possui menos de 7 caracteres
-            if (placa.Length < 7)
+            if (placa.Length < 7 || placa.Length > 7)
             {
                 MessageBox.Show("A placa do veículo deve ter 7 caracteres.", "Alerta!");
                 return;
@@ -140,25 +142,45 @@ namespace Estacionamento
             }
             else
             {
-                
+                // Calcular o tempo de permanência e o valor cobrado
 
-                ////gravar veiculo na lista de saida que esteja lista de entrada (mas em formato diferente)
-                //Veiculo veiculo = new Veiculo(placa);
-                //listaVeiculosSaida.Add(veiculo);
+                veiculoSaida.CalcularValorCobrado(horaSaida, veiculoSaida.HoraEntrada);
 
-                //// Atualizar o campo textBox_listaSaidaDeVeiculos
-                //textBox_listaSaidaDeVeiculos.AppendText(placa + Environment.NewLine);
+                // Atualizar a exibição do tempo de permanência
+                textBox_tempoDePermanencia.Text = veiculoSaida.TempoPermanenciaFormatado;
 
-                //Persistencia.GravarArquivoVeiculosSaida(listaVeiculosSaida);
+                //Exibir valor a ser cobrado
+                textBox_cobrar.Text = veiculoSaida.ValorCobrado.ToString("C2").Replace("R$", "R$ ");
 
-                //// Atualizar a lista de veículos na caixa de texto
-                //AtualizarListaVeiculosSaida();
+                //gravar veiculo na lista de saida que esteja na lista de entrada (mas em formato diferente)
+                Veiculo veiculo = new Veiculo(placa, veiculoSaida.DataEntrada, veiculoSaida.HoraEntrada, veiculoSaida.tempoPermanencia, veiculoSaida.valorCobrado);
+                listaVeiculosSaida.Add(veiculo);
 
-                //// Calcular o tempo de permanência e o valor cobrado
-                //veiculoSaida.CalcularValorCobrado(horaSaida);
+                // Atualizar o campo textBox_listaSaidaDeVeiculos
+                textBox_listaSaidaDeVeiculos.AppendText(placa + " - " + veiculoSaida.DataEntrada + " - " + veiculoSaida.HoraEntrada + " - " + veiculoSaida.tempoPermanencia + " - " + veiculoSaida.valorCobrado + " reais " + Environment.NewLine);
 
-                ////mostrar calculo de tempo de permanencia no textbox
-                //textBox_tempoDePermanencia.Text = veiculoSaida.TempoPermanenciaFormatado;
+                //Excluir veiculo do arquivo e da lista de entrada e gravar na lista de saida
+                bool removeu = false;
+                foreach (var dados in listaVeiculosEntrada)
+                {
+                    if (placa == dados.PlacaVeiculo)
+                    {
+                        listaVeiculosEntrada.Remove(dados);
+                        removeu = true;
+                        break;
+                    }
+                }
+                if (removeu)
+                {
+                    Persistencia.GravarArquivoVeiculosSaida(listaVeiculosSaida);
+                    Persistencia.GravarArquivoVeiculosEntrada(listaVeiculosEntrada);
+                    AtualizarListaVeiculosEntrada();
+                }
+
+                // Limpar os campos de saída
+                textBox_Placa.Clear();
+                textBox_horaSaida.Clear();
+
             }
 
 

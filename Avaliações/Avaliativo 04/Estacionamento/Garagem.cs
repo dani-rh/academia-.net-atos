@@ -9,7 +9,7 @@ namespace Estacionamento
     internal class Garagem
     {
         private static TimeSpan horaAbertura = new TimeSpan(7, 0, 0); // 7h
-        private static TimeSpan horaFechamento = new TimeSpan(20, 0, 0); // 20h
+        private static TimeSpan horaFechamento = new TimeSpan(19, 59, 0); // 20h
         private static int limiteVagas = 50;
 
         public static bool ValidarEntrada(TimeSpan horaEntrada, List<Veiculo> listaVeiculosEntrada)
