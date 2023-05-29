@@ -83,10 +83,6 @@ namespace Estacionamento
             set { valorCobrado = value; }
         }
 
-
-        //     gerarData()
-
-
         //jaCadastrada(placa)
         public static bool jaCadastrada(string placaVeiculo, List<Veiculo> listaEntrada)
         {
@@ -121,9 +117,6 @@ namespace Estacionamento
                 ValorCobrado = 0;
             }
         }
-
-
-
 
     }
 }
