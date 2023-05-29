@@ -43,6 +43,10 @@
             labelNome = new Label();
             labelIdade = new Label();
             labelSalario = new Label();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -88,7 +92,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(67, 125);
+            label2.Location = new Point(23, 170);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 4;
@@ -97,7 +101,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(67, 170);
+            label3.Location = new Point(23, 215);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 5;
@@ -106,7 +110,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(67, 217);
+            label4.Location = new Point(23, 262);
             label4.Name = "label4";
             label4.Size = new Size(42, 15);
             label4.TabIndex = 6;
@@ -114,28 +118,28 @@
             // 
             // txbNome
             // 
-            txbNome.Location = new Point(197, 125);
+            txbNome.Location = new Point(91, 170);
             txbNome.Name = "txbNome";
             txbNome.Size = new Size(100, 23);
             txbNome.TabIndex = 7;
             // 
             // txbIdade
             // 
-            txbIdade.Location = new Point(197, 167);
+            txbIdade.Location = new Point(91, 212);
             txbIdade.Name = "txbIdade";
             txbIdade.Size = new Size(100, 23);
             txbIdade.TabIndex = 8;
             // 
             // txbSalario
             // 
-            txbSalario.Location = new Point(197, 209);
+            txbSalario.Location = new Point(91, 254);
             txbSalario.Name = "txbSalario";
             txbSalario.Size = new Size(100, 23);
             txbSalario.TabIndex = 9;
             // 
             // btnSerializaXML
             // 
-            btnSerializaXML.Location = new Point(384, 170);
+            btnSerializaXML.Location = new Point(278, 123);
             btnSerializaXML.Name = "btnSerializaXML";
             btnSerializaXML.Size = new Size(124, 23);
             btnSerializaXML.TabIndex = 10;
@@ -145,7 +149,7 @@
             // 
             // btnDesserializa
             // 
-            btnDesserializa.Location = new Point(128, 269);
+            btnDesserializa.Location = new Point(278, 152);
             btnDesserializa.Name = "btnDesserializa";
             btnDesserializa.Size = new Size(124, 23);
             btnDesserializa.TabIndex = 11;
@@ -156,35 +160,79 @@
             // labelNome
             // 
             labelNome.AutoSize = true;
-            labelNome.Location = new Point(168, 332);
+            labelNome.Location = new Point(512, 174);
             labelNome.Name = "labelNome";
-            labelNome.Size = new Size(38, 15);
+            labelNome.Size = new Size(40, 15);
             labelNome.TabIndex = 12;
-            labelNome.Text = "label5";
+            labelNome.Text = "Nome";
             // 
             // labelIdade
             // 
             labelIdade.AutoSize = true;
-            labelIdade.Location = new Point(168, 370);
+            labelIdade.Location = new Point(512, 212);
             labelIdade.Name = "labelIdade";
-            labelIdade.Size = new Size(38, 15);
+            labelIdade.Size = new Size(36, 15);
             labelIdade.TabIndex = 13;
-            labelIdade.Text = "label6";
+            labelIdade.Text = "Idade";
             // 
             // labelSalario
             // 
             labelSalario.AutoSize = true;
-            labelSalario.Location = new Point(168, 407);
+            labelSalario.Location = new Point(512, 249);
             labelSalario.Name = "labelSalario";
-            labelSalario.Size = new Size(38, 15);
+            labelSalario.Size = new Size(42, 15);
             labelSalario.TabIndex = 14;
-            labelSalario.Text = "label7";
+            labelSalario.Text = "Salario";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(278, 199);
+            button3.Name = "button3";
+            button3.Size = new Size(124, 23);
+            button3.TabIndex = 15;
+            button3.Text = "SerializaJson";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(278, 232);
+            button4.Name = "button4";
+            button4.Size = new Size(124, 23);
+            button4.TabIndex = 16;
+            button4.Text = "DesserializaJson";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(278, 311);
+            button5.Name = "button5";
+            button5.Size = new Size(124, 23);
+            button5.TabIndex = 18;
+            button5.Text = "Desserializa SOAP";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(278, 278);
+            button6.Name = "button6";
+            button6.Size = new Size(124, 23);
+            button6.TabIndex = 17;
+            button6.Text = "Serializa SOAP";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(585, 531);
+            ClientSize = new Size(641, 531);
+            Controls.Add(button5);
+            Controls.Add(button6);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(labelSalario);
             Controls.Add(labelIdade);
             Controls.Add(labelNome);
@@ -224,5 +272,9 @@
         private Label labelNome;
         private Label labelIdade;
         private Label labelSalario;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
     }
 }

@@ -1,6 +1,7 @@
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Formatters.Soap;
 using System.Xml.Serialization;
-using System.Xml;
+using Newtonsoft.Json;
 
 
 namespace Serialização
@@ -64,6 +65,57 @@ namespace Serialização
             labelSalario.Text = pDes.salario.ToString();
 
             reader.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pessoa p = new Pessoa();
+            p.nome = txbNome.Text;
+            p.idade = int.Parse(txbIdade.Text);
+            p.salario = double.Parse(txbSalario.Text);
+
+            JsonSerializer serializer = new JsonSerializer();
+            StreamWriter sw = new StreamWriter(@"C:\Users\usuario\Documents\GitHub\academia-.net-atos\C#\19. Aula 29.05 - Serialização\pessoas.json");
+            JsonWriter writer = new JsonTextWriter(sw);
+            serializer.Serialize(writer, p);
+            MessageBox.Show("Serializado em Json");
+            sw.Close();
+            writer.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string json = File.ReadAllText(@"C:\Users\usuario\Documents\GitHub\academia-.net-atos\C#\19. Aula 29.05 - Serialização\pessoas.json");
+
+            Pessoa pDes = JsonConvert.DeserializeObject<Pessoa>(json);
+            labelNome.Text = pDes.nome;
+            labelIdade.Text = pDes.idade.ToString();
+            labelSalario.Text = pDes.salario.ToString();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Pessoa p = new Pessoa();
+            p.nome = txbNome.Text;
+            p.idade = int.Parse(txbIdade.Text);
+            p.salario = double.Parse(txbSalario.Text);
+
+            FileStream stream = new FileStream(@"C:\Users\usuario\Documents\GitHub\academia-.net-atos\C#\19. Aula 29.05 - Serialização\pessoas.data", FileMode.Create);
+            SoapFormatter soap = new SoapFormatter();
+            MessageBox.Show("Serializado SOAP");
+            soap.Serialize(stream, p);
+            stream.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FileStream stream = new FileStream(@"C:\Users\usuario\Documents\GitHub\academia-.net-atos\C#\19. Aula 29.05 - Serialização\pessoas.data", FileMode.Open);
+            SoapFormatter soap = new SoapFormatter();
+            Pessoa pDes = new Pessoa();
+            pDes = (Pessoa)soap.Deserialize(stream);
+            labelNome.Text = pDes.nome;
+            labelIdade.Text = pDes.idade.ToString();
+            labelSalario.Text = pDes.salario.ToString();
         }
     }
 }
