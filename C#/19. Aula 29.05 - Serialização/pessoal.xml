@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Pessoa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <nome>Daniela</nome>
+  <idade>27</idade>
+  <salario>1500</salario>
+</Pessoa>
