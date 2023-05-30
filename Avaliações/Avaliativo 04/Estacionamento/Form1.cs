@@ -48,7 +48,7 @@ namespace Estacionamento
         {
             foreach (Veiculo veiculo in listaVeiculosSaida)
             {
-                textBox_listaSaidaDeVeiculos.AppendText(veiculo.placaVeiculo + " - " + veiculo.DataEntrada + " - " + veiculo.HoraEntrada + " - " + veiculo.TempoPermanenciaFormatado + " - " + veiculo.valorCobrado + " reais " + Environment.NewLine);
+                textBox_listaSaidaDeVeiculos.AppendText(veiculo.placaVeiculo + " - " + veiculo.DataEntrada + " - " + veiculo.HoraEntrada + " - " + veiculo.TempoPermanencia + " - " + veiculo.valorCobrado + " reais " + Environment.NewLine);
             }
         }
 
@@ -153,7 +153,7 @@ namespace Estacionamento
                 //Exibir valor a ser cobrado
                 textBox_cobrar.Text = veiculoSaida.ValorCobrado.ToString("C2").Replace("R$", "R$ ");
                 
-                MessageBox.Show("Tempo de permanência: " + textBox_tempoDePermanencia.Text + "Valor a ser cobrado: " + textBox_cobrar.Text);
+                MessageBox.Show("Tempo de permanência: " + textBox_tempoDePermanencia.Text + " e Valor a ser cobrado: " + textBox_cobrar.Text);
 
                 //gravar veiculo na lista de saida que esteja na lista de entrada (mas em formato diferente)
                 Veiculo veiculo = new Veiculo(placa, veiculoSaida.DataEntrada, veiculoSaida.HoraEntrada, veiculoSaida.tempoPermanencia, veiculoSaida.valorCobrado);

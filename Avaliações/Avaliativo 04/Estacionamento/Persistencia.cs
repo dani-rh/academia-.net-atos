@@ -57,8 +57,10 @@ namespace Estacionamento
                             string placaVeiculo = dados[0];
                             DateOnly dataEntrada = DateOnly.Parse(dados[1]);
                             TimeSpan horaEntrada = TimeSpan.Parse(dados[2]);
-                            TimeSpan tempoPermanencia = TimeSpan.Parse(dados[3]);
+                            double tempoPermanenciaEmMinutos = double.Parse(dados[3]);
                             decimal valorCobrado = decimal.Parse(dados[4]);
+
+                            TimeSpan tempoPermanencia = TimeSpan.FromMinutes(tempoPermanenciaEmMinutos);
 
                             Veiculo veiculo = new Veiculo(placaVeiculo, dataEntrada, horaEntrada)
                             {
@@ -91,7 +93,9 @@ namespace Estacionamento
             {
                 foreach (Veiculo veiculo in listaVeiculosSaida)
                 {
-                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntrada};{veiculo.HoraEntrada.ToString()};{veiculo.TempoPermanencia.TotalMinutes};{veiculo.ValorCobrado}";
+                    TimeSpan tempoPermanencia = TimeSpan.FromMinutes(veiculo.TempoPermanencia.TotalMinutes);
+
+                    string linha = $"{veiculo.PlacaVeiculo};{veiculo.DataEntrada};{veiculo.HoraEntrada.ToString()};{tempoPermanencia.TotalMinutes};{veiculo.ValorCobrado}";
                     escritor.WriteLine(linha);
                 }
             }
