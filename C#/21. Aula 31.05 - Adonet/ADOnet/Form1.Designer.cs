@@ -32,6 +32,11 @@
             dataGridView1 = new DataGridView();
             btnFiltrar = new Button();
             textBox1 = new TextBox();
+            txbNome = new TextBox();
+            txtProfissao = new TextBox();
+            btnCadastrar = new Button();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -63,6 +68,7 @@
             btnFiltrar.TabIndex = 2;
             btnFiltrar.Text = "Filtrar";
             btnFiltrar.UseVisualStyleBackColor = true;
+            btnFiltrar.Click += btnFiltrar_Click;
             // 
             // textBox1
             // 
@@ -71,11 +77,58 @@
             textBox1.Size = new Size(200, 39);
             textBox1.TabIndex = 3;
             // 
+            // txbNome
+            // 
+            txbNome.Location = new Point(81, 561);
+            txbNome.Name = "txbNome";
+            txbNome.Size = new Size(186, 39);
+            txbNome.TabIndex = 4;
+            // 
+            // txtProfissao
+            // 
+            txtProfissao.Location = new Point(81, 658);
+            txtProfissao.Name = "txtProfissao";
+            txtProfissao.Size = new Size(186, 39);
+            txtProfissao.TabIndex = 5;
+            // 
+            // btnCadastrar
+            // 
+            btnCadastrar.Location = new Point(97, 723);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(150, 46);
+            btnCadastrar.TabIndex = 6;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(97, 513);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 32);
+            label1.TabIndex = 7;
+            label1.Text = "Nome";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(97, 614);
+            label2.Name = "label2";
+            label2.Size = new Size(109, 32);
+            label2.TabIndex = 8;
+            label2.Text = "Profissão";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1155, 920);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnCadastrar);
+            Controls.Add(txtProfissao);
+            Controls.Add(txbNome);
             Controls.Add(textBox1);
             Controls.Add(btnFiltrar);
             Controls.Add(dataGridView1);
@@ -93,5 +146,10 @@
         private DataGridView dataGridView1;
         private Button btnFiltrar;
         private TextBox textBox1;
+        private TextBox txbNome;
+        private TextBox txtProfissao;
+        private Button btnCadastrar;
+        private Label label1;
+        private Label label2;
     }
 }
