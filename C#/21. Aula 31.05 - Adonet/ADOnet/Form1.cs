@@ -43,7 +43,7 @@ namespace ADOnet
             p.nome = txbNome.Text;
             p.profissao = txtProfissao.Text;
 
-            if(p.gravarPessoa())
+            if (p.gravarPessoa())
             {
                 MessageBox.Show("Cadastrado com sucesso!");
             }
@@ -53,5 +53,20 @@ namespace ADOnet
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Pessoa p = new Pessoa();
+            p.id = Convert.ToInt32(txbID.Text);
+
+            if (p.excluirPessoa())
+            {
+                MessageBox.Show("Excluída com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Erro ao excluir!");
+            }
+        }
     }
 }
