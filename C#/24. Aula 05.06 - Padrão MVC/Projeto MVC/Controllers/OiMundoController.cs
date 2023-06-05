@@ -12,11 +12,15 @@ namespace Projeto_MVC.Controllers
             //return "Apresente esta mensagem";
         }
 
-        public string Welcome(string nome, int ID = 1)
+        public IActionResult Welcome(string nome, int numTimes = 1)
         {
             //return "Estou no método Welcome do OiMundoController";
             //return HtmlEncoder.Default.Encode($"Oi {nome}, vezes: {vezes}");
-            return HtmlEncoder.Default.Encode($"Oi {nome}, ID: {ID}");
+            //return HtmlEncoder.Default.Encode($"Oi {nome}, ID: {ID}");
+            ViewData["Message"] = "Oi Daniela ";
+            ViewData["NumTimes"] = 10;
+
+            return View();
         }
 
         public string Oi()
