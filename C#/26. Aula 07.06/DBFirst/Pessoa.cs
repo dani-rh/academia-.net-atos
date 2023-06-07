@@ -5,9 +5,9 @@ namespace DBFirst;
 
 public partial class Pessoa
 {
-    public int Id { get; set; }
+    public int id { get; set; }
 
-    public string Nome { get; set; } = null!;
+    public string nome { get; set; } = null!;
 
-    public virtual ICollection<Email> Emails { get; set; } = new List<Email>();
+    public virtual ICollection<Email> emails { get; set; } = new List<Email>();
 }

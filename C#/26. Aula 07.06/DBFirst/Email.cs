@@ -5,9 +5,9 @@ namespace DBFirst;
 
 public partial class Email
 {
-    public int Id { get; set; }
+    public int id { get; set; }
 
-    public string Email1 { get; set; } = null!;
+    public string email { get; set; } = null!;
 
     public int? FkPessoa { get; set; }
 
