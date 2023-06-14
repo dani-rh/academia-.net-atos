@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
+using System.Runtime.InteropServices;
 
 namespace Anotações.Controllers
 {
@@ -58,6 +59,53 @@ namespace Anotações.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+        //[HttpPost]
+
+        //[Route("emails/post/{id}")]
+
+        //public async Task<IActionResult> PostAsync(
+
+        //    [FromBody] Email? email,
+
+        //    [FromRoute] int id)
+
+        //{
+
+        //    if (!ModelState.IsValid) // validações colocadas com notações na classe models, como required, tamanho entre outros
+
+        //    {
+
+        //        return BadRequest();
+
+        //    }
+
+        //    try
+
+        //    {
+
+        //        Pessoa? p = await _context.Pessoas.FindAsync(id);
+
+        //        email.Pessoa = p;
+
+        //        await _context.Emails.AddAsync(email);
+
+        //        await _context.SaveChangesAsync();
+
+        //        return Created($"api/emails/{email.id}", email);
+
+        //    }
+
+        //    catch (Exception ex)
+
+        //    {
+
+        //        return BadRequest(ex.ToString());
+
+        //    }
+
+        //}
 
         [HttpPut]
         [Route("pessoas/{id}")]
