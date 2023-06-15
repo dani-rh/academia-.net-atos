@@ -60,52 +60,48 @@ namespace Anotações.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("pessoas/{id}")]
+        public async Task<IActionResult> cadEmailemPessoa(
+            [FromServices] Contexto contexto,
+            [FromBody] Email email,
+            [FromRoute] int id)
 
-        //[HttpPost]
+        {
+            var pessoa = await contexto.Pessoas.AsNoTracking()
+                .FirstOrDefaultAsync(p => p.id == id);
 
-        //[Route("emails/post/{id}")]
+            email.pessoa = pessoa;
 
-        //public async Task<IActionResult> PostAsync(
+            try
+            {
+                contexto.Set<Email>().Add(email);
+                //contexto.Entry(email.pessoa).State = EntityState.Unchanged;
+                await contexto.SaveChangesAsync();
+            }
+            catch(Exception ex)
+            {
 
-        //    [FromBody] Email? email,
+            }
+            return Created($"api/pessoas/{pessoa.id}", email);
 
-        //    [FromRoute] int id)
-
-        //{
-
-        //    if (!ModelState.IsValid) // validações colocadas com notações na classe models, como required, tamanho entre outros
-
-        //    {
-
-        //        return BadRequest();
-
-        //    }
-
-        //    try
-
-        //    {
-
-        //        Pessoa? p = await _context.Pessoas.FindAsync(id);
-
-        //        email.Pessoa = p;
-
-        //        await _context.Emails.AddAsync(email);
-
-        //        await _context.SaveChangesAsync();
-
-        //        return Created($"api/emails/{email.id}", email);
-
-        //    }
-
-        //    catch (Exception ex)
-
-        //    {
-
-        //        return BadRequest(ex.ToString());
-
-        //    }
-
-        //}
+            //if (!ModelState.IsValid) // validações colocadas com notações na classe models, como required, tamanho entre outros
+            //{
+            //    return BadRequest();
+            //}
+            //try
+            //{
+            //    Pessoa? p = await contexto.Pessoas.FindAsync(id);
+            //    email.pessoa = p;
+            //    await contexto.Pessoas.AddAsync(p);
+            //    await contexto.SaveChangesAsync();
+            //    return Created($"api/emails/{email.id}", email);
+            //}
+            //catch (Exception ex)
+            //{
+            //    return BadRequest(ex.ToString());
+            //}
+        }
 
         [HttpPut]
         [Route("pessoas/{id}")]
