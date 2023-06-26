@@ -1,0 +1,47 @@
+# Ignore build output
+[Bb]in/
+[Oo]bj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.dll
+*.exe
+*.pdb
+*.cache
+*.bak
+*.swp
+*.vspscc
+*_i.c
+*_p.c
+
+# Ignore NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+
+# Ignore Visual Studio files
+.vs/
+
+# Ignore sensitive files that contain secrets
+appsettings.*.json
+*.pfx
+*.key
+*.cert
+*.config
+
+# Ignore globally installed .NET Core SDKs and tools
+.dotnet/
+.tools/
+
+# Ignore ReSharper files
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Ignore Rider files
+.idea/
+
+# Ignore wwwroot folder
+wwwroot/
