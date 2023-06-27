@@ -19,7 +19,6 @@ namespace ToDo2Day.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Tag>>> GetTags()
         {
             return Ok(await _tagRepository.GetAllTagsAsync());

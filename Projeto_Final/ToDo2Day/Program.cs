@@ -14,6 +14,8 @@ namespace ToDo2Day
 
             // Add services to the container.
             builder.Services.AddScoped<ITagRepository, TagRepository>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -27,7 +29,7 @@ namespace ToDo2Day
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
+                app.UseSwagger();   
                 app.UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToDo2Day API V1");
