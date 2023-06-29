@@ -10,5 +10,7 @@ namespace ToDo2Day.Repository
         Task<User> AddUserAsync(UserCreateDTO userCreateDTO);
         Task UpdateUserAsync(Guid userId, UserUpdateDTO userUpdateDTO);
         Task DeleteUserAsync(Guid userId);
+        Task<User> GetUserByEmailAsync(string email);
+        Task<User> ValidateUserCredentialsAsync(string email, string password);
     }
 }
