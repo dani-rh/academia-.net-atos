@@ -1,16 +1,16 @@
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label for="title">Titulo</label>
+    <label for="title">Title</label>
     <input type="text" id="title" formControlName="title" class="form-control">
   </div>
   <div class="form-group">
-    <label for="description">Descrição</label>
+    <label for="description">Description:</label>
     <textarea id="description" formControlName="description" class="form-control"></textarea>
   </div>
   <div class="form-group">
-    <label for="tag">Tag(opcional)</label>
+    <label for="tag">Tag(optional):</label>
     <select id="tag" formControlName="tagId" class="form-control">
-      <option value="" disabled selected>Selecione uma tag</option>
+      <option value="" disabled selected>Select a tag</option>
       <option *ngFor="let tag of tags" [value]="tag.tagId">{{ tag.name }}</option>
     </select>
   </div>

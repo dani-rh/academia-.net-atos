@@ -1,6 +1,6 @@
 <div class="app-container">
   <header>
-    <h1>To Do 2 Day</h1>
+    <h1>ToDo2Day</h1>
 
     <div class="user-info" *ngIf="authService.isLoggedIn(); else showLogin">
       Welcome, {{ authService.getCurrentUser() }}
@@ -17,9 +17,13 @@
     <ul>
       <li><a routerLink="/tasks">My Tasks</a></li>
     </ul>
+  </nav>
+
+  <main>
+    <router-outlet></router-outlet>
   </main>
 
   <footer>
-    <p>&copy; 2023 To Do 2 Day App</p>
+    <p>&copy; 2023 ToDo2Day App</p>
   </footer>
 </div>
