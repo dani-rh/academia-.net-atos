@@ -4,8 +4,8 @@
 
     <div class="user-info" *ngIf="authService.isLoggedIn(); else showLogin">
       Welcome, {{ authService.getCurrentUser() }}
-      <button (click)="onLogout()">Leave</button>
     </div>
+    <button (click)="onLogout()">Logout</button>
     <ng-template #showLogin>
       <div class="login-button">
         <a routerLink="/login">Login</a>
@@ -16,7 +16,6 @@
   <nav>
     <ul>
       <li><a routerLink="/tasks">My Tasks</a></li>
-      <li><a routerLink="/tags">My Tags</a></li>
     </ul>
   </nav>
 
