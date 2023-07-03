@@ -2,20 +2,22 @@
 
 <div *ngIf="!isLoading">
   <div *ngIf="tags.length > 0; else noTagsTemplate">
-    <ul>
-      <li *ngFor="let tag of tags">
-        {{ tag.name }}
-
-        <!-- Edit icon -->
-        <i class="fa-solid fa-pencil" style="cursor: pointer;" (click)="onEdit(tag.tagId)"></i>
-
-        <!-- Delete icon -->
-        <i class="fa-regular fa-trash-can" style="cursor: pointer;" (click)="onDelete(tag.tagId)"></i>
-      </li>
-    </ul>
+    <h2>My Tags</h2>
+    <table>
+      <tbody>
+        <tr *ngFor="let tag of tags">
+          <td>{{ tag.name }}</td>
+          <td><i class="fa-solid fa-pencil" style="cursor: pointer;" (click)="onEdit(tag.tagId)"></i></td>
+          <td> <i class="fa-regular fa-trash-can" style="cursor: pointer;" (click)="onDelete(tag.tagId)"></i></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <ng-template #noTagsTemplate>
     <p>No Tags created yet!</p>
   </ng-template>
   <button (click)="onCreate()">New</button>
 </div>
+
+
+

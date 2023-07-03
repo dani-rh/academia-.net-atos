@@ -2,6 +2,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TaskItemResponseDTO } from '../../dtos/task-item-response.dto';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from 'src/app/services/task.service';
+import { TagService } from 'src/app/services/tag.service';
+import { Tag } from '../../models/tag.model';
+
 
 @Component({
   selector: 'app-task-item', // nome da tag HTML personalizada que sera substituida pelo modelo deste componente
@@ -18,17 +21,23 @@ export class TaskItemComponent implements OnInit {
   // Servicos necessarios para o construtor do componente
   constructor(
     private taskService: TaskService,
+    private tagService: TagService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
+  public tag: Tag;
 
   ngOnInit(): void {
-    // Alteracoes nos parametros da rota
     this.route.params.subscribe((params) => {
-      const taskId = params['id']; //ID da tarefa dos parametros de rota
-      //Busca a tarefa por seu ID e a atribui a propriedade da tarefa
+      const taskId = params['id'];
       this.taskService.getTask(taskId).subscribe((taskData) => {
         this.task = taskData;
+
+        if (this.task.tagId) {
+          this.tagService.getTagById(this.task.tagId).subscribe(tagData => {
+            this.tag = tagData;
+          });
+        }
       });
     });
   }

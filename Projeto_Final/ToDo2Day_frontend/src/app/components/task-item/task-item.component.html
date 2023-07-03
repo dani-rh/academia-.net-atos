@@ -1,5 +1,6 @@
 <div class="task-item" (click)="onViewTask()">
   <div class="task-details">
+    <p *ngIf="tag">{{ tag.name }}</p>
     <h2>{{ task.title }}</h2>
     <p>Description: {{ task.description }}</p>
   </div>
