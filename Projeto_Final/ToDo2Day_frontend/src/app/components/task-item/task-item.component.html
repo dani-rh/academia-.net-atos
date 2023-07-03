@@ -1,1 +1,10 @@
-<p>task-item works!</p>
+<div class="task-item" (click)="onViewTask()">
+  <div class="task-details">
+    <h2>{{ task.title }}</h2>
+    <p>Descrição: {{ task.description }}</p>
+  </div>
+  <div class="task-actions">
+    <button (click)="onEditTask(); $event.stopPropagation()">Editar</button>
+    <button (click)="onDeleteTask(); $event.stopPropagation()">Deletar</button>
+  </div>
+</div>
