@@ -1,1 +1,10 @@
-<p>tag-create-edit works!</p>
+<form [formGroup]="tagForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="tagName">Nome da Tag</label>
+    <input type="text" id="tagName" formControlName="tagName" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-primary"
+    [disabled]="!tagForm.valid">{{ editMode ? 'Update' : 'Create' }}
+    Tag</button>
+</form>
