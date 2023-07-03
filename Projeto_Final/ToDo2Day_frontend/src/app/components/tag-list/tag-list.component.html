@@ -1,4 +1,4 @@
-<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="isLoading">Carregando...</div>
 
 <div *ngIf="!isLoading">
   <div *ngIf="tags.length > 0; else noTagsTemplate">
@@ -15,7 +15,7 @@
     </ul>
   </div>
   <ng-template #noTagsTemplate>
-    <p>No Tags created yet!</p>
+    <p>Nenhuma Tag foi criada ainda!</p>
   </ng-template>
-  <button (click)="onCreate()">New</button>
+  <button (click)="onCreate()">Criar Tag</button>
 </div>

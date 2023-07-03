@@ -1,15 +1,15 @@
 <div class="task-list">
   <div *ngIf="tasks.length === 0" class="no-task-message">
-    No Tasks created yet!
+    Nenhuma Tarefa criada ainda!
   </div>
 
-  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <table>
     <thead>
       <tr>
-        <th>Title</th>
+        <th>Título</th>
         <th>Tag</th>
-        <th>Created at</th>
-        <th>Completed?</th>
+        <th>Criado em</th>
+        <th>Completo?</th>
       </tr>
     </thead>
     <tbody>

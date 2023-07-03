@@ -26,13 +26,9 @@
             ],
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "src/styles.css",
-              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/datatables.net/js/jquery.dataTables.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
