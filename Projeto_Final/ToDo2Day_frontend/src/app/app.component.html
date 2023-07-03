@@ -1,10 +1,10 @@
 <div class="app-container">
   <header>
-    <h1>To Do 2 Day</h1>
+    <h1>ToDo2Day</h1>
 
     <div class="user-info" *ngIf="authService.isLoggedIn(); else showLogin">
-      Bem vindo, {{ authService.getCurrentUser() }}
-      <button (click)="onLogout()">Sair</button>
+      Welcome, {{ authService.getCurrentUser() }}
+      <button (click)="onLogout()">Leave</button>
     </div>
     <ng-template #showLogin>
       <div class="login-button">
@@ -15,8 +15,8 @@
 
   <nav>
     <ul>
-      <li><a routerLink="/tasks">Página inicial</a></li>
-      <li><a routerLink="/tags">Tags</a></li>
+      <li><a routerLink="/tasks">My Tasks</a></li>
+      <li><a routerLink="/tags">My Tags</a></li>
     </ul>
   </nav>
 
@@ -25,6 +25,6 @@
   </main>
 
   <footer>
-    <p>&copy; 2023 To Do 2 Day App</p>
+    <p>&copy; 2023 ToDo2Day App</p>
   </footer>
 </div>
