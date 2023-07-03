@@ -1,1 +1,21 @@
-<p>tag-list works!</p>
+<div *ngIf="isLoading">Carregando...</div>
+
+<div *ngIf="!isLoading">
+  <div *ngIf="tags.length > 0; else noTagsTemplate">
+    <ul>
+      <li *ngFor="let tag of tags">
+        {{ tag.name }}
+
+        <!-- Edit icon -->
+        <i class="fa-solid fa-pencil" style="cursor: pointer;" (click)="onEdit(tag.tagId)"></i>
+
+        <!-- Delete icon -->
+        <i class="fa-regular fa-trash-can" style="cursor: pointer;" (click)="onDelete(tag.tagId)"></i>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noTagsTemplate>
+    <p>Nenhuma Tag foi criada ainda!</p>
+  </ng-template>
+  <button (click)="onCreate()">Criar Tag</button>
+</div>
