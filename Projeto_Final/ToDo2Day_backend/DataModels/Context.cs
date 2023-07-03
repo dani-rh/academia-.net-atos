@@ -22,38 +22,64 @@ namespace ToDo2Day.DataModels
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //não trazer as tags deletadas
+            modelBuilder.Entity<TaskItem>()
+                .HasOne(ti => ti.User)
+                .WithMany()
+                .HasForeignKey(ti => ti.UserId);
+
+            modelBuilder.Entity<TaskItem>()
+                .HasOne(ti => ti.Tag)
+                .WithMany()
+                .HasForeignKey(ti => ti.TagId)
+                .IsRequired(false);
+
+            modelBuilder.Entity<User>().HasQueryFilter(e => e.DeletedAt == null);
+            modelBuilder.Entity<TaskItem>().HasQueryFilter(e => e.DeletedAt == null);
             modelBuilder.Entity<Tag>().HasQueryFilter(e => e.DeletedAt == null);
 
-            //preencher automaticamente o campo CreatedAt e UpdatedAt
+            modelBuilder.Entity<User>()
+                .Property(b => b.CreatedAt)
+                .HasDefaultValueSql("getdate()");
+
+            modelBuilder.Entity<User>()
+                .Property(b => b.UpdatedAt)
+                .HasDefaultValueSql("getdate()");
+
             modelBuilder.Entity<Tag>()
-               .Property(b => b.CreatedAt)
-               .HasDefaultValueSql("getdate()");
+                .Property(b => b.CreatedAt)
+                .HasDefaultValueSql("getdate()");
 
             modelBuilder.Entity<Tag>()
                 .Property(b => b.UpdatedAt)
                 .HasDefaultValueSql("getdate()");
+
+            modelBuilder.Entity<TaskItem>()
+                .Property(b => b.CreatedAt)
+                .HasDefaultValueSql("getdate()");
+
+            modelBuilder.Entity<TaskItem>()
+                .Property(b => b.UpdatedAt)
+                .HasDefaultValueSql("getdate()");
         }
+
         public override int SaveChanges()
         {
             var entries = ChangeTracker
                 .Entries()
-                .Where(e => e.Entity is Tag);
+                .Where(e => e.Entity is User || e.Entity is TaskItem || e.Entity is Tag);
 
             foreach (var entityEntry in entries)
             {
-                //se a entidade estiver sendo adicionada o CreatedAt é definido como a data e hora atual
                 if (entityEntry.State == EntityState.Added)
                 {
                     ((dynamic)entityEntry.Entity).CreatedAt = DateTime.Now;
                 }
-                //se a entidade estiver sendo excluída o DeletedAt é definido como a data e hora atual
                 else if (entityEntry.State == EntityState.Deleted)
                 {
-                    entityEntry.State = EntityState.Modified;//exclusão da entidade é tratada como uma atualização no banco de dados
+                    entityEntry.State = EntityState.Modified;
                     ((dynamic)entityEntry.Entity).DeletedAt = DateTime.Now;
                 }
-                //para toda modificação, a UpdatedAt é definida como a data e hora atual
+
                 ((dynamic)entityEntry.Entity).UpdatedAt = DateTime.Now;
             }
 

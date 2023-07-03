@@ -10,7 +10,5 @@ namespace ToDo2Day.DTOs
         [Required]
         public Guid UserId { get; set; }
         public Guid? TagId { get; set; }
-        [Required]
-        public bool IsCompleted { get; set; }
     }
 }

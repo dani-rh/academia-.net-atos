@@ -14,9 +14,13 @@ namespace ToDo2Day.Repository
             _context = context;
         }
 
-        public async Task<IEnumerable<TaskItem>> GetAllTaskItemsAsync()
+        public async Task<IEnumerable<TaskItem>> GetAllTaskItemsAsync(Guid userId)
         {
-            return await _context.TaskItems.Include(t => t.User).Include(t => t.Tag).ToListAsync();
+            return await _context.TaskItems
+                                 .Where(task => task.UserId == userId)
+                                 .Include(t => t.User)
+                                 .Include(t => t.Tag)
+                                 .ToListAsync();
         }
 
         public async Task<TaskItem> GetTaskItemByIdAsync(Guid taskItemId)
@@ -33,7 +37,7 @@ namespace ToDo2Day.Repository
                 Description = taskItemCreateDTO.Description,
                 UserId = taskItemCreateDTO.UserId,
                 TagId = taskItemCreateDTO.TagId,
-                IsCompleted = taskItemCreateDTO.IsCompleted,
+                IsCompleted = false,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             };
@@ -52,7 +56,6 @@ namespace ToDo2Day.Repository
             {
                 taskItem.Title = taskItemUpdateDTO.Title;
                 taskItem.Description = taskItemUpdateDTO.Description;
-                taskItem.UserId = taskItemUpdateDTO.UserId;
                 taskItem.TagId = taskItemUpdateDTO.TagId;
                 taskItem.IsCompleted = taskItemUpdateDTO.IsCompleted;
                 taskItem.UpdatedAt = DateTime.UtcNow;

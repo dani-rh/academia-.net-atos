@@ -6,10 +6,11 @@ namespace ToDo2Day.DTOs
     {
         [Required]
         public string Title { get; set; }
+
         public string Description { get; set; }
-        [Required]
-        public Guid UserId { get; set; }
+
         public Guid? TagId { get; set; }
+
         [Required]
         public bool IsCompleted { get; set; }
     }

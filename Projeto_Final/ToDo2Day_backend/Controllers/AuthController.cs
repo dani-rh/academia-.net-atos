@@ -27,7 +27,16 @@ namespace ToDo2Day.Controllers
             _jwtSettings = jwtSettings;
         }
 
+        /// <summary>
+        /// Registers a new user.
+        /// </summary>
+        /// <param name="userDto">User details.</param>
+        /// <returns>Newly registered user details.</returns>
+        /// <response code="201">Returns the newly registered user.</response>
+        /// <response code="400">If the user is null.</response>   
         [HttpPost("Register")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<User>> Register(UserCreateDTO userDto)
         {
             // Antes de registrar, verifica se já existe um usuário com o mesmo email
@@ -39,21 +48,31 @@ namespace ToDo2Day.Controllers
 
             var user = await _userRepository.AddUserAsync(userDto);
             return CreatedAtAction(nameof(UserController.GetUser), "User", new { id = user.UserId }, user);
+
         }
 
+        /// <summary>
+        /// User login endpoint. Generate and returns a JWT token.
+        /// </summary>
+        /// <param name="userLoginDTO">Login payload</param>
+        /// <returns>A JWT token</returns>
+        /// <response code="200">Returns the newly generated token</response>
+        /// <response code="401">If the user login credentials are not valid</response>  
         [HttpPost("Login")]
+        [ProducesResponseType(typeof(string), 200)]
+        [ProducesResponseType(typeof(void), 401)]
         public async Task<IActionResult> Login(UserLoginDTO userLoginDTO)
         {
-            // Busca o usuário no banco de dados
+            // Fetch the user from the database
             var userFromDb = await _userRepository.GetUserByEmailAsync(userLoginDTO.Email);
 
-            // Verifica se o usuário existe e se a senha está correta
+            // Check if the user exists and the password is correct
             if (userFromDb == null || userFromDb.Password != userLoginDTO.Password)
             {
                 return Unauthorized();
             }
 
-            //Criação do token
+            // Create the token
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtSettings.Value.SecretKey);
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -66,7 +85,7 @@ namespace ToDo2Day.Controllers
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
-            return Ok(new {token = tokenHandler.WriteToken(token)});
+            return Ok(new { token = tokenHandler.WriteToken(token) });
         }
 
     }

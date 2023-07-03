@@ -33,6 +33,7 @@ namespace ToDo2Day.Repository
                 LastName = userCreateDTO.LastName,
                 Email = userCreateDTO.Email,
                 Password = userCreateDTO.Password,
+                RefreshToken = string.Empty,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             };
@@ -52,7 +53,7 @@ namespace ToDo2Day.Repository
                 user.LastName = userUpdateDTO.LastName;
                 user.Email = userUpdateDTO.Email;
                 user.Password = userUpdateDTO.Password;
-                user.UpdatedAt = DateTime.UtcNow; // atualiza o campo 'UpdatedAt' 
+                user.UpdatedAt = DateTime.UtcNow; // update the 'UpdatedAt' field
 
                 await _context.SaveChangesAsync();
             }
@@ -80,8 +81,8 @@ namespace ToDo2Day.Repository
         public async Task<User> ValidateUserCredentialsAsync(string email, string password)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-            
-            if (user != null && user.Password == password)
+
+            if (user != null && user.Password == password)  // comparing plain text password, not recommended in production
             {
                 return user;
             }

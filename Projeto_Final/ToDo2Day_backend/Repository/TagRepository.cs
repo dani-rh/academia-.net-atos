@@ -7,15 +7,18 @@ namespace ToDo2Day.Repository
 {
     public class TagRepository : ITagRepository
     {
-        //instância do contexto é necessária para interagir com o banco de dados
         private readonly Context _context;
+
         public TagRepository(Context context)
         {
             _context = context;
         }
-        public async Task<IEnumerable<Tag>> GetAllTagsAsync()
+
+        public async Task<IEnumerable<Tag>> GetAllTagsAsync(Guid userId)
         {
-            return await _context.Tags.ToListAsync();
+            return await _context.Tags
+                .Where(tag => tag.UserId == userId)
+                .ToListAsync();
         }
 
         public async Task<Tag> GetTagByIdAsync(Guid tagId)
@@ -23,15 +26,15 @@ namespace ToDo2Day.Repository
             return await _context.Tags.FindAsync(tagId);
         }
 
-        public async Task<Tag> AddTagAsync(TagCreateDTO tagCreateDTO)
+        public async Task<Tag> AddTagAsync(TagCreateDTO tagCreateDTO, Guid userId)
         {
             var tag = new Tag
             {
-                TagId = Guid.NewGuid(), 
+                TagId = Guid.NewGuid(),
                 Name = tagCreateDTO.TagName,
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
-                // Não é necessário a deletedAt, porque a tag está sendo criada
+                UpdatedAt = DateTime.UtcNow,
+                UserId = userId
             };
 
             await _context.Tags.AddAsync(tag);
@@ -41,12 +44,14 @@ namespace ToDo2Day.Repository
         }
 
 
+
         public async Task UpdateTagAsync(Guid tagId, TagUpdateDTO tagUpdateDTO)
         {
             var existingTag = await _context.Tags.FindAsync(tagId);
             if (existingTag != null)
             {
                 existingTag.Name = tagUpdateDTO.NewTagName;
+                // Update other properties if needed.
                 await _context.SaveChangesAsync();
             }
             else
