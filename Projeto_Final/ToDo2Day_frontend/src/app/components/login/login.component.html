@@ -1,1 +1,14 @@
-<p>login works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">Senha</label>
+    <input type="password" id="password" formControlName="password" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+  <div class="register-link">
+    Não possui conta? <a routerLink="/register">Registrar</a>
+  </div>
+</form>
