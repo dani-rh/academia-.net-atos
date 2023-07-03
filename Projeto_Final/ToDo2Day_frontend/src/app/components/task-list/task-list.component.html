@@ -1,1 +1,29 @@
-<p>task-list works!</p>
+<div class="task-list">
+  <div *ngIf="tasks.length === 0" class="no-task-message">
+    Nenhuma Tarefa criada ainda!
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Tag</th>
+        <th>Criado em</th>
+        <th>Completo?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks" (click)="onTaskView(task.taskItemId)">
+        <td>{{ task.title }}</td>
+        <td>{{ task.tagId ? tagNames[task.tagId] : ' - ' }}</td>
+        <td>{{ task.createdAt | date: 'shortDate' }}</td>
+        <td>
+          <input type="checkbox" [checked]="task.isCompleted" (click)="$event.stopPropagation()"
+            (change)="onCompletionChange(task.taskItemId, $event)">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="onTaskCreate()" class="create-task-button">Criar Tarefa</button>
+</div>
