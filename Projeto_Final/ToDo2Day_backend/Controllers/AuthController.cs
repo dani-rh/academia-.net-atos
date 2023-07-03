@@ -13,7 +13,7 @@ using ToDo2Day.Settings;
 namespace ToDo2Day.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
         private readonly IConfiguration _configuration;
