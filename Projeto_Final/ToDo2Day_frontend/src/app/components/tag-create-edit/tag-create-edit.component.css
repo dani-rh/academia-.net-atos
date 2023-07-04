@@ -1,15 +1,18 @@
 .btn.btn-primary {
-  margin-top: 13px;
+  margin-top: 15px;
+  width: 280px;
 }
 
 h4 {
   color:rgb(83, 83, 83);
 }
 
-.form-control {
-  width: 18%;
-}
-
 form {
   margin-top: 25px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

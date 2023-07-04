@@ -1,10 +1,12 @@
-<form [formGroup]="tagForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <h4 for="tagName">Tag Name</h4>
-    <input type="text" id="tagName" formControlName="tagName" class="form-control">
-  </div>
+<div class="container">
+  <form [formGroup]="tagForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <h4 for="tagName">Tag Name</h4>
+      <input type="text" id="tagName" formControlName="tagName" class="form-control">
+    </div>
 
-  <button type="submit" class="btn btn-primary"
-    [disabled]="!tagForm.valid">{{ editMode ? 'Update' : 'Create' }}
-    Tag</button>
-</form>
+    <button type="submit" class="btn btn-primary"
+      [disabled]="!tagForm.valid">{{ editMode ? 'Update' : 'Create' }}
+      Tag</button>
+  </form>
+</div>

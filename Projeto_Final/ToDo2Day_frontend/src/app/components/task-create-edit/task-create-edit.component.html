@@ -4,11 +4,11 @@
     <input type="text" id="title" formControlName="title" class="form-control">
   </div>
   <div class="form-group">
-    <label for="description">Description:</label>
+    <label for="description">Description</label>
     <textarea id="description" formControlName="description" class="form-control"></textarea>
   </div>
   <div class="form-group">
-    <label for="tag">Tag (optional):</label>
+    <label for="tag">Tag (optional)</label>
     <select id="tag" formControlName="tagId" class="form-control">
       <option value="" disabled selected>Select a tag</option>
       <option *ngFor="let tag of tags" [value]="tag.tagId">{{ tag.name }}</option>
