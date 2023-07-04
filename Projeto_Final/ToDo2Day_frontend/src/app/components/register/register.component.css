@@ -1,0 +1,12 @@
+input{
+  width: 354px;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+button{
+  width: 354px;
+  margin-top: 15px;
+}

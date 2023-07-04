@@ -76,13 +76,11 @@ h5{
 
 .user-info {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin-right: 22px;
 }
 
-.login-button {
-  display: flex;
-  justify-content: end;
-  align-items: center;
+.btn-logout{
+  margin-left: 22px;
 }
