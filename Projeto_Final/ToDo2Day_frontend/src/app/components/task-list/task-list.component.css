@@ -1,4 +1,18 @@
 .button-container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  width: 54%;
+  margin: auto;
 }
+
+
+.task-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+

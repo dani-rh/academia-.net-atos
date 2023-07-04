@@ -1,0 +1,17 @@
+input,textarea,select,button{
+  width: 500px;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+button{
+  margin-top: 15px;
+}
+
+.my-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

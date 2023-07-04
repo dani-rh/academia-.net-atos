@@ -1,0 +1,22 @@
+.task-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 26%;
+  margin: 21px 0 0 0;
+}
+
+.task-actions button:first-child {
+  margin-right: 10px;
+}
+
+.task-details {
+  width: 569px;
+  margin-top: 22px;
+}

@@ -15,8 +15,8 @@
       </ul>
       <ng-container *ngIf="authService.isLoggedIn(); else showLogin">
         <div class="user-info">
-          Welcome, {{ authService.getCurrentUser() }}
-          <button type="button" class="btn btn-light btn-logout" (click)="onLogout()">Logout</button>
+          <h5>Welcome, {{ authService.getCurrentUser() }}
+          <button type="button" class="btn btn-light btn-logout" (click)="onLogout()">Logout</button></h5>
         </div>
       </ng-container>
       <ng-template #showLogin>

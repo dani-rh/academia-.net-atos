@@ -3,7 +3,7 @@
     No Tasks created yet!
   </div>
 
-  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" style="width: 1000px;">
     <thead>
       <tr>
         <th>Title</th>
@@ -26,7 +26,7 @@
   </table>
 
   <div class="button-container">
-    <button type="button" class="btn btn-primary" (click)="onTaskCreate()">New Task</button>
     <button type="button" class="btn btn-primary mng-tags" routerLink="/tags">Manage Tags</button>
+    <button type="button" class="btn btn-primary" (click)="onTaskCreate()">New Task</button>
   </div>
 </div>

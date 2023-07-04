@@ -15,6 +15,7 @@ header {
 nav {
   background-color: #8bb3db;
   padding: 10px 0;
+  height: 71px;
 }
 
 nav ul li a {
@@ -58,6 +59,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
 }
 
 nav ul {
@@ -66,7 +68,6 @@ nav ul {
   flex-grow: 1;
   list-style: none;
   padding: 0;
-  color: white;
 }
 
 .my-tasks{
