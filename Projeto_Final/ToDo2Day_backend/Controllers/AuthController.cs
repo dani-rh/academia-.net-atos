@@ -63,16 +63,16 @@ namespace ToDo2Day.Controllers
         [ProducesResponseType(typeof(void), 401)]
         public async Task<IActionResult> Login(UserLoginDTO userLoginDTO)
         {
-            // Fetch the user from the database
+            // Busca o usuário do banco de dados
             var userFromDb = await _userRepository.GetUserByEmailAsync(userLoginDTO.Email);
 
-            // Check if the user exists and the password is correct
+            // Verifica se o usuário existe e a senha está correta
             if (userFromDb == null || userFromDb.Password != userLoginDTO.Password)
             {
                 return Unauthorized();
             }
 
-            // Create the token
+            // Cria o token
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtSettings.Value.SecretKey);
             var tokenDescriptor = new SecurityTokenDescriptor

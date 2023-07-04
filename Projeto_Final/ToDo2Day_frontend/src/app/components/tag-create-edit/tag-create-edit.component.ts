@@ -10,33 +10,32 @@ import { Tag } from '../../models/tag.model';
   styleUrls: ['./tag-create-edit.component.css'],
 })
 export class TagCreateEditComponent implements OnInit {
-  tagForm: FormGroup; // Form group instance to handle form operations
-  editMode = false; // To keep track of whether we are in edit mode or create mode
-  tag: Tag; // To hold the data of the tag to be edited
-  tagId: string; // To hold the ID of the tag to be edited
+  tagForm: FormGroup;
+  editMode = false;
+  tag: Tag;
+  tagId: string;
 
   constructor(
-    private tagService: TagService, // Injecting the tag service
-    private route: ActivatedRoute, // Injecting the activated route service
-    private router: Router // Injecting the router service
+    private tagService: TagService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    // Initializing the form group
+    // Inicializando o form
     this.tagForm = new FormGroup({
-      tagName: new FormControl(null, Validators.required), // tagName field with required validator
+      tagName: new FormControl(null, Validators.required),
     });
 
-    // Subscribing to route parameters
     this.route.params.subscribe((params) => {
       if (params['id']) {
-        // If ID is present in the route, we are in edit mode
+        //Se o ID estiver presente na rota, estamos no modo de edicao
         this.editMode = true;
-        this.tagId = params['id']; // Storing the ID from the route parameters
-        // Fetching the tag data
+        this.tagId = params['id']; // Armazenando o ID
+        // Buscando os dados da tag
         this.tagService.getTagById(this.tagId).subscribe((tag: Tag) => {
-          this.tag = tag; // Storing the fetched tag data
-          // Setting the fetched tag's name to the form
+          this.tag = tag; // Armazenando os dados da tag
+          // Configurando o nome da tag para o form
           this.tagForm.setValue({
             tagName: this.tag.name,
           });
@@ -47,18 +46,18 @@ export class TagCreateEditComponent implements OnInit {
 
   onSubmit() {
     if (this.editMode) {
-      // If in edit mode
-      const { tagName: newTagName } = this.tagForm.value; // Extract the updated tag name
-      // Update the tag
+      // Se no modo de edicao
+      const { tagName: newTagName } = this.tagForm.value; // Extrai o nome da tag atualizado
+      // Atualiza a  tag
       this.tagService.updateTag(this.tagId, { newTagName }).subscribe(() => {
-        this.router.navigate(['/tags']); // Navigate to the tags list
+        this.router.navigate(['/tags']); // Navega até a lista de tags
       });
     } else {
-      // If in create mode
-      const { tagName } = this.tagForm.value; // Extract the tag name
-      // Add the new tag
+      // Se no modo de criacao
+      const { tagName } = this.tagForm.value; // Extrai o nome da tag
+      // Adiciona uma nova tag
       this.tagService.addTag({ tagName }).subscribe(() => {
-        this.router.navigate(['/tags']); // Navigate to the tags list
+        this.router.navigate(['/tags']); //  Navega até a lista de tags
       });
     }
   }

@@ -51,7 +51,6 @@ namespace ToDo2Day.Repository
             if (existingTag != null)
             {
                 existingTag.Name = tagUpdateDTO.NewTagName;
-                // Update other properties if needed.
                 await _context.SaveChangesAsync();
             }
             else

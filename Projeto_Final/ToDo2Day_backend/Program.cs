@@ -23,10 +23,6 @@ namespace ToDo2Day
             // Load JWT settings from app configuration and configure DI container
             builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 
-            // Uncomment the following lines if you want to use SQL Server and replace "DefaultConnection" with your connection string
-            // builder.Services.AddDbContext<Context>(options =>
-            //     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
             // Add authentication services to DI and configure JWT bearer
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
@@ -60,7 +56,7 @@ namespace ToDo2Day
             builder.Services.AddSwaggerGen(c =>
             {
                 // Set up Swagger doc and security definition
-                c.SwaggerDoc("v1", new() { Title = "TaskManager", Version = "v1" });
+                c.SwaggerDoc("v1", new() { Title = "ToDo2Day", Version = "v1" });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -104,7 +100,7 @@ namespace ToDo2Day
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "TaskManager API V1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToDo2Day API V1");
                 });
             }
 

@@ -8,7 +8,7 @@ import { TaskItemUpdateDTO } from 'src/app/dtos/task-item-update.dto';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 
-declare var $: any; // add this line
+declare var $: any;
 
 @Component({
   selector: 'app-task-list',
@@ -32,7 +32,6 @@ export class TaskListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // Adding custom sorting for checkbox
     $.fn.dataTable.ext.order['dom-checkbox'] = function (settings: any, col: any) {
       return this.api().column(col, {order: 'index'}).nodes().map(function (td: any, i: any) {
         return $('input', td).prop('checked') ? '1' : '0';
@@ -44,7 +43,6 @@ export class TaskListComponent implements OnInit, OnDestroy {
       pagingType: 'full_numbers',
       pageLength: 5,
       processing: true,
-      // Define the column containing the checkboxes
       columnDefs: [
         { targets: [3], orderDataType: 'dom-checkbox' }
       ],
