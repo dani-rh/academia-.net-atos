@@ -5,7 +5,7 @@
     <p>Description: {{ task.description }}</p>
   </div>
   <div class="task-actions">
-    <button (click)="onEditTask(); $event.stopPropagation()">Edit</button>
-    <button (click)="onDeleteTask(); $event.stopPropagation()">Delete</button>
+    <button type="button" class="btn btn-primary new-btn"  (click)="onEditTask(); $event.stopPropagation()">Edit</button>
+    <button type="button" class="btn btn-primary new-btn" (click)="onDeleteTask(); $event.stopPropagation()">Delete</button>
   </div>
 </div>

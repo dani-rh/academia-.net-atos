@@ -1,22 +1,28 @@
 <div class="app-container">
   <header>
-    <h1>ToDo2Day</h1>
-
-    <div class="user-info" *ngIf="authService.isLoggedIn(); else showLogin">
-      Welcome, {{ authService.getCurrentUser() }}
-    </div>
-    <button (click)="onLogout()">Logout</button>
-    <ng-template #showLogin>
-      <div class="login-button">
-        <a routerLink="/login">Login</a>
+    <div class="header-content">
+      <div class="header-titles">
+        <h1>ToDo2Day</h1>
+        <h5>Your productivity app!</h5>
       </div>
-    </ng-template>
+    </div>
   </header>
 
   <nav>
-    <ul>
-      <li><a routerLink="/tasks">My Tasks</a></li>
-    </ul>
+    <div class="nav-content">
+      <ul>
+        <li><a routerLink="/tasks"><h5>My Tasks</h5></a></li>
+      </ul>
+      <div class="user-info" *ngIf="authService.isLoggedIn(); else showLogin">
+        Welcome, {{ authService.getCurrentUser() }}
+        <button type="button" class="btn btn-light btn-logout" (click)="onLogout()">Logout</button>
+      </div>
+       <ng-template #showLogin>
+        <div class="login-button">
+          <a routerLink="/login">Login</a>
+        </div>
+      </ng-template>
+    </div>
   </nav>
 
   <main>

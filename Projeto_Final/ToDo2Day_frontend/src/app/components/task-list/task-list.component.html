@@ -25,6 +25,8 @@
     </tbody>
   </table>
 
-  <button (click)="onTaskCreate()" class="create-task-button">New Task</button>
-  <button routerLink="/tags">Manage Tags</button>
+  <div class="button-container">
+    <button type="button" class="btn btn-primary" (click)="onTaskCreate()">New Task</button>
+    <button type="button" class="btn btn-primary mng-tags" routerLink="/tags">Manage Tags</button>
+  </div>
 </div>

@@ -1,0 +1,22 @@
+tbody {
+  text-align: center;
+}
+
+.table{
+  width: 500px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-btn {
+  margin-right: 411px;
+  margin-top: -19px;
+}
+
+h4 {
+  color:rgb(83, 83, 83);
+}

@@ -6,23 +6,15 @@
 }
 
 header {
-  background-color: #aeb0b3;
+  background-color: #3a6bb4;
   color: white;
   padding: 20px;
   text-align: center;
 }
 
 nav {
-  background-color: #b9c0c7;
+  background-color: #8bb3db;
   padding: 10px 0;
-}
-
-nav ul {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  padding: 0;
-  color: white;
 }
 
 nav ul li a {
@@ -41,8 +33,56 @@ main {
 }
 
 footer {
-  background-color: #2c3e50;
+  background-color: #2d3135;
   color: white;
   text-align: center;
   padding: 10px 0;
+}
+
+.btn-logout {
+  padding: revert;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.header-titles {
+  flex-grow: 1;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: start;
+  flex-grow: 1;
+  list-style: none;
+  padding: 0;
+  color: white;
+}
+
+h5{
+  margin-left: 23px;
+  margin-top: 16px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 22px;
+}
+
+.login-button {
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }

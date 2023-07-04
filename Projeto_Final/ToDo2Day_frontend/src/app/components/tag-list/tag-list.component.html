@@ -1,11 +1,11 @@
 <div *ngIf="isLoading">Loading...</div>
 
-<div *ngIf="!isLoading">
-  <div *ngIf="tags.length > 0; else noTagsTemplate">
-    <h2>My Tags</h2>
-    <table>
+<div *ngIf="!isLoading" class="center">
+  <div *ngIf="tags.length > 0; else noTagsTemplate"  class="mb-3">
+    <h4>My Tags</h4>
+    <table class="table table-striped table-bordered">
       <tbody>
-        <tr *ngFor="let tag of tags">
+        <tr *ngFor="let tag of tags" >
           <td>{{ tag.name }}</td>
           <td><i class="fa-solid fa-pencil" style="cursor: pointer;" (click)="onEdit(tag.tagId)"></i></td>
           <td> <i class="fa-regular fa-trash-can" style="cursor: pointer;" (click)="onDelete(tag.tagId)"></i></td>
@@ -16,7 +16,9 @@
   <ng-template #noTagsTemplate>
     <p>No Tags created yet!</p>
   </ng-template>
-  <button (click)="onCreate()">New</button>
+</div>
+<div class="center">
+  <button type="button" class="btn btn-primary new-btn" (click)="onCreate()">New Tag</button>
 </div>
 
 
