@@ -7,6 +7,8 @@ import { TagListComponent } from './components/tag-list/tag-list.component';
 import { TaskCreateEditComponent } from './components/task-create-edit/task-create-edit.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
+import { AuthGuard } from './auth.guard';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -22,6 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'tasks',
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: TaskListComponent },
       { path: 'create', component: TaskCreateEditComponent },
