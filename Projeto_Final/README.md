@@ -20,7 +20,7 @@ The backend is built using C#. Here's how to get it up and running:
 
 1. Connect to your local database and run the migrations.
 2. Open a terminal/command prompt.
-3. Navigate to the backend project directory (e.g., `cd backend`).
+3. Navigate to the backend project directory (e.g., `cd ToDo2Day_backend`).
 4. Restore the .NET packages by running `dotnet restore`.
 5. Build the project by running `dotnet build`.
 6. Run the project by running `dotnet run`.
@@ -34,7 +34,7 @@ You can find the swagger documentation at `https://localhost:7097/swagger/index.
 The frontend is an Angular application. Follow these steps to run it:
 
 1. Open a new terminal/command prompt.
-2. Navigate to the frontend project directory (e.g., `cd frontend`).
+2. Navigate to the frontend project directory (e.g., `cd ToDo2Day_frontend`).
 3. Install the dependencies by running `npm install`.
 4. Start the Angular app by running `ng serve`.
 
