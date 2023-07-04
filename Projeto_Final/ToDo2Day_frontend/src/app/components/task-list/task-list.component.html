@@ -7,17 +7,17 @@
     <thead>
       <tr>
         <th>Title</th>
-        <th>Tag</th>
-        <th>Created at</th>
-        <th>Completed?</th>
+        <th style="text-align: center;">Tag</th>
+        <th style="text-align: center;">Created at</th>
+        <th style="text-align: center;">Completed?</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let task of tasks" (click)="onTaskView(task.taskItemId)">
         <td>{{ task.title }}</td>
-        <td>{{ task.tagId ? tagNames[task.tagId] : ' - ' }}</td>
-        <td>{{ task.createdAt | date: 'shortDate' }}</td>
-        <td>
+        <td style="text-align: center;">{{ task.tagId ? tagNames[task.tagId] : ' - ' }}</td>
+        <td style="text-align: center;">{{ task.createdAt | date: 'shortDate' }}</td>
+        <td style="text-align: center;">
           <input type="checkbox" [checked]="task.isCompleted" (click)="$event.stopPropagation()"
             (change)="onCompletionChange(task.taskItemId, $event)">
         </td>
