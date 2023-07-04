@@ -20,3 +20,14 @@
   width: 569px;
   margin-top: 22px;
 }
+
+h2{
+  margin-top: 15px
+}
+
+.tag-button{
+  height: 22px;
+  padding: unset;
+  width: 90px;
+}
+
